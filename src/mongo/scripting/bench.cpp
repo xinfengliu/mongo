@@ -141,6 +141,8 @@ namespace mongo {
     void BenchRunConfig::initializeFromBson( const BSONObj &args ) {
         initializeToDefaults();
 
+	srand48((long)rand());
+
         if ( args["host"].type() == String )
             this->host = args["host"].String();
         if ( args["db"].type() == String )
@@ -297,7 +299,7 @@ namespace mongo {
             int min = i.next().numberInt();
             int max = i.next().numberInt();
 
-            int x = min + ( rand() % ( max - min ) );
+            int x = min + ( lrand48() % ( max - min ) );
 
             if ( i.more() )
                 x *= i.next().numberInt();

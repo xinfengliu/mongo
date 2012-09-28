@@ -529,6 +529,8 @@ elif "sunos5" == os.sys.platform:
      solaris = True
      env.Append( CPPDEFINES=[ "__sunos__" ] )
      env.Append( LIBS=["socket","resolv"] )
+     env.Append( CCFLAGS=[ "-fno-function-sections","-fno-data-sections"])
+#     env.Append( CCFLAGS=[ "-Wcast-align","-Werror" ])
 
 elif os.sys.platform.startswith( "freebsd" ):
     nix = True
@@ -785,10 +787,10 @@ env.Append( CPPPATH=['$EXTRACPPPATH'],
 def doConfigure(myenv):
     conf = Configure(myenv)
 
-    if 'CheckCXX' in dir( conf ):
-        if  not conf.CheckCXX():
-            print( "c++ compiler not installed!" )
-            Exit(1)
+#    if 'CheckCXX' in dir( conf ):
+#        if  not conf.CheckCXX():
+#            print( "c++ compiler not installed!" )
+#            Exit(1)
 
     if use_system_version_of_library("boost"):
         if not conf.CheckCXXHeader( "boost/filesystem/operations.hpp" ):

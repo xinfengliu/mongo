@@ -29,6 +29,7 @@ namespace mongo {
         addOperator("RAND_INT", &BsonTemplateEvaluator::evalRandInt);
         addOperator("RAND_STRING", &BsonTemplateEvaluator::evalRandString);
         addOperator("CONCAT", &BsonTemplateEvaluator::evalConcat);
+	srand48((long)rand());
     }
 
     BsonTemplateEvaluator::BsonTemplateEvaluator() {
@@ -92,7 +93,7 @@ namespace mongo {
         const int max  = range["1"].numberInt();
         if (max <= min)
             return StatusOpEvaluationError;
-        int randomNum = min + (rand() % (max - min));
+        int randomNum = min + (lrand48() % (max - min));
         if (range.nFields() == 3) {
             if (!range[2].isNumber())
                 return StatusOpEvaluationError;

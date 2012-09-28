@@ -65,8 +65,8 @@ namespace mongo {
 #endif
 
 #if defined(__sunos__)
-    MAdvise::MAdvise(void *,unsigned, Advice) { }
-    MAdvise::~MAdvise() { }
+    MAdvise::MAdvise(void *p, unsigned len, Advice a) {}
+    MAdvise::~MAdvise() {}
 #else
     MAdvise::MAdvise(void *p, unsigned len, Advice a) {
         
@@ -87,9 +87,9 @@ namespace mongo {
         
     }
     MAdvise::~MAdvise() { 
-        madvise(_p,_len,MADV_NORMAL);
+        madvise((char *)_p,_len,MADV_NORMAL);
     }
-#endif
+#endif 
 
     void* MemoryMappedFile::map(const char *filename, unsigned long long &length, int options) {
         // length may be updated by callee.
@@ -124,7 +124,11 @@ namespace mongo {
 
 
 #if defined(__sunos__)
-#warning madvise not supported on solaris yet
+/*
+        if ( madvise( (caddr_t)view , length , MADV_WILLNEED) ) {
+            warning() << "map: madvise failed for " << filename << ' ' << errnoWithDescription() << endl;
+        }
+*/
 #else
         if ( options & SEQUENTIAL ) {
             if ( madvise( view , length , MADV_SEQUENTIAL ) ) {
