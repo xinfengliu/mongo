@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_EXPLAIN_H
+#define MONGO_DB_EXPLAIN_H
 
 #include "cursor.h"
 #include "../util/timer.h"
@@ -186,3 +188,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_EXPLAIN_H */

@@ -20,6 +20,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_PARALLEL_H
+#define MONGO_CLIENT_PARALLEL_H
 
 #include "mongo/db/dbmessage.h"
 #include "mongo/db/matcher.h"
@@ -474,3 +476,5 @@ namespace mongo {
 
 }
 
+
+#endif /* MONGO_CLIENT_PARALLEL_H */

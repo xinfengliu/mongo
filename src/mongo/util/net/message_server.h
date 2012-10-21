@@ -21,6 +21,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_NET_MESSAGE_SERVER_H
+#define MONGO_UTIL_NET_MESSAGE_SERVER_H
 
 #include "mongo/pch.h"
 
@@ -66,3 +68,5 @@ namespace mongo {
     // TODO use a factory here to decide between port and asio variations
     MessageServer * createServer( const MessageServer::Options& opts , MessageHandler * handler );
 }
+
+#endif /* MONGO_UTIL_NET_MESSAGE_SERVER_H */

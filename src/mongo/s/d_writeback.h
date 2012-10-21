@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_D_WRITEBACK_H
+#define MONGO_S_D_WRITEBACK_H
 
 #include "mongo/pch.h"
 
@@ -104,3 +106,5 @@ namespace mongo {
     extern WriteBackManager writeBackManager;
 
 } // namespace mongo
+
+#endif /* MONGO_S_D_WRITEBACK_H */

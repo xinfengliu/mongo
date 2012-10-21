@@ -18,6 +18,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_RESTAPI_H
+#define MONGO_DB_RESTAPI_H
 
 #include "../util/admin_access.h"
 
@@ -32,3 +34,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_RESTAPI_H */

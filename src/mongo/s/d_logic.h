@@ -17,6 +17,8 @@
 
 
 #pragma once
+#ifndef MONGO_S_D_LOGIC_H
+#define MONGO_S_D_LOGIC_H
 
 #include "mongo/pch.h"
 
@@ -249,3 +251,5 @@ namespace mongo {
     void aboutToDeleteForSharding( const Database* db , const DiskLoc& dl );
 
 }
+
+#endif /* MONGO_S_D_LOGIC_H */

@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_STRING_WRITER_H
+#define MONGO_UTIL_STRING_WRITER_H
 
 #include "mongo/pch.h"
 
@@ -26,3 +28,5 @@ namespace mongo {
 	virtual void writeString(stringstream &ss) const = 0;
     };
 }
+
+#endif /* MONGO_UTIL_STRING_WRITER_H */

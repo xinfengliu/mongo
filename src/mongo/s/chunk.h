@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_CHUNK_H
+#define MONGO_S_CHUNK_H
 
 #include "mongo/pch.h"
 
@@ -524,3 +526,5 @@ namespace mongo {
     bool setShardVersion( DBClientBase & conn , const string& ns , ShardChunkVersion version , bool authoritative , BSONObj& result );
 
 } // namespace mongo
+
+#endif /* MONGO_S_CHUNK_H */

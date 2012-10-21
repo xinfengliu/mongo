@@ -1,8 +1,8 @@
 # -*- mode: python -*-
 
-Import("env windows")
+Import("env windows solaris")
 
-if not windows:
+if not windows and not solaris:
     env = env.Clone()
     env.Append(CCFLAGS=['-Wno-sign-compare', '-Wno-unused-function'])
 

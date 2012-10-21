@@ -1,4 +1,6 @@
 #pragma once
+#ifndef MONGO_DB_MEMCONCEPT_H
+#define MONGO_DB_MEMCONCEPT_H
 
 /* The idea here is to 'name' memory pointers so that we can do diagnostics.
    these diagnostics might involve concurrency or other things.  mainly would
@@ -47,3 +49,5 @@ namespace mongo {
 
     }
 }
+
+#endif /* MONGO_DB_MEMCONCEPT_H */

@@ -13,6 +13,8 @@
  *    limitations under the License.
  */
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_TICKETHOLDER_H
+#define MONGO_UTIL_CONCURRENCY_TICKETHOLDER_H
 
 #include <boost/thread/condition_variable.hpp>
 
@@ -108,3 +110,5 @@ namespace mongo {
         TicketHolder * _holder;
     };
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_TICKETHOLDER_H */

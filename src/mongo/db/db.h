@@ -15,6 +15,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_DB_H
+#define MONGO_DB_DB_H
 
 #include "mongo/pch.h"
 #include "../util/net/message.h"
@@ -105,3 +107,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_DB_H */

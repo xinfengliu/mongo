@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_SYSTEMINFO_H
+#define MONGO_UTIL_SYSTEMINFO_H
 
 #include <cstddef>
 
@@ -39,3 +41,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_SYSTEMINFO_H */

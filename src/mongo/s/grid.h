@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_GRID_H
+#define MONGO_S_GRID_H
 
 #include <boost/date_time/posix_time/posix_time.hpp>
 
@@ -150,3 +152,5 @@ namespace mongo {
     extern Grid grid;
 
 } // namespace mongo
+
+#endif /* MONGO_S_GRID_H */

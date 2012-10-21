@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_UTIL_HEAPCHECK_H
+#define MONGO_UTIL_HEAPCHECK_H
 
 #if defined(HEAP_CHECKING)
 
@@ -31,3 +33,5 @@
 #define UNIGNORE_OBJECT( a )
 
 #endif
+
+#endif /* MONGO_UTIL_HEAPCHECK_H */

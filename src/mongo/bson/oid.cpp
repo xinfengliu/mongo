@@ -118,11 +118,15 @@ namespace mongo {
 
         {
             unsigned t = (unsigned) time(0);
+#ifdef __sparc
+	    *(unsigned *)_time = t;
+#else
             unsigned char *T = (unsigned char *) &t;
             _time[0] = T[3]; // big endian order because we use memcmp() to compare OID's
             _time[1] = T[2];
             _time[2] = T[1];
             _time[3] = T[0];
+#endif
         }
 
         _machineAndPid = ourMachineAndPid;
@@ -130,9 +134,15 @@ namespace mongo {
         {
             int new_inc = inc++;
             unsigned char *T = (unsigned char *) &new_inc;
+#ifdef __sparc
+            _inc[0] = T[1];
+            _inc[1] = T[2];
+            _inc[2] = T[3];
+#else
             _inc[0] = T[2];
             _inc[1] = T[1];
             _inc[2] = T[0];
+#endif
         }
     }
 
@@ -141,11 +151,15 @@ namespace mongo {
 
         {
             unsigned t = (unsigned) time(0);
+#ifdef __sparc
+	    *(unsigned *)_time = t;
+#else
             unsigned char *T = (unsigned char *) &t;
             _time[0] = T[3]; // big endian order because we use memcmp() to compare OID's
             _time[1] = T[2];
             _time[2] = T[1];
             _time[3] = T[0];
+#endif
         }
         
         {
@@ -168,11 +182,15 @@ namespace mongo {
 
     void OID::init(Date_t date, bool max) {
         int time = (int) (date / 1000);
+#ifdef __sparc
+	*(int *)data = time;
+#else
         char* T = (char *) &time;
         data[0] = T[3];
         data[1] = T[2];
         data[2] = T[1];
         data[3] = T[0];
+#endif
 
         if (max)
             *(long long*)(data + 4) = 0xFFFFFFFFFFFFFFFFll;
@@ -181,6 +199,9 @@ namespace mongo {
     }
 
     time_t OID::asTimeT() {
+#ifdef __sparc
+	return *(int *)data;
+#else
         int time;
         char* T = (char *) &time;
         T[0] = data[3];
@@ -188,6 +209,7 @@ namespace mongo {
         T[2] = data[1];
         T[3] = data[0];
         return time;
+#endif
     }
 
     const string BSONObjBuilder::numStrs[] = {

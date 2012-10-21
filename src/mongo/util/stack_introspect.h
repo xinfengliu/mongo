@@ -1,6 +1,8 @@
 // stack_introspect.h
 
 #pragma once
+#ifndef MONGO_UTIL_STACK_INTROSPECT_H
+#define MONGO_UTIL_STACK_INTROSPECT_H
 
 namespace mongo {
 
@@ -19,3 +21,5 @@ namespace mongo {
     bool inConstructorChainSupported();
 
 }
+
+#endif /* MONGO_UTIL_STACK_INTROSPECT_H */

@@ -20,8 +20,8 @@
 #define DB_STATS_SERVICE_STATS_HEADER
 
 #include <string>
-
 #include "../../util/concurrency/spin_lock.h"
+
 
 namespace mongo {
 

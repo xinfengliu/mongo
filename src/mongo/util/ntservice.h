@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_NTSERVICE_H
+#define MONGO_UTIL_NTSERVICE_H
 
 #if defined(_WIN32)
 #include <windows.h>
@@ -70,3 +72,5 @@ namespace mongo {
 } // namespace mongo
 
 #endif
+
+#endif /* MONGO_UTIL_NTSERVICE_H */

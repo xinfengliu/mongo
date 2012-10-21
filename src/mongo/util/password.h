@@ -16,6 +16,8 @@
 
 
 #pragma once
+#ifndef MONGO_UTIL_PASSWORD_H
+#define MONGO_UTIL_PASSWORD_H
 
 #include <boost/program_options.hpp>
 #include <string>
@@ -59,3 +61,5 @@ namespace mongo {
     std::string askPassword();
 
 }
+
+#endif /* MONGO_UTIL_PASSWORD_H */

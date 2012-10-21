@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_CHUNK_DIFF_H
+#define MONGO_S_CHUNK_DIFF_H
 
 #include "util.h"
 #include "../bson/bsonobj.h"
@@ -166,3 +168,5 @@ namespace mongo {
 // TODO: Convert to normal .cpp file when normalized
 #include "chunk_diff.hpp"
 
+
+#endif /* MONGO_S_CHUNK_DIFF_H */

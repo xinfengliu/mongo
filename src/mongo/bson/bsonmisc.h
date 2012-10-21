@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_BSONMISC_H
+#define MONGO_BSON_BSONMISC_H
 
 #include "mongo/bson/bsonelement.h"
 
@@ -213,3 +215,5 @@ namespace mongo {
     // considers order
     bool fieldsMatch(const BSONObj& lhs, const BSONObj& rhs);
 }
+
+#endif /* MONGO_BSON_BSONMISC_H */

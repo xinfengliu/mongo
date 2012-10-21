@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_PIPELINE_ACCUMULATOR_H
+#define MONGO_DB_PIPELINE_ACCUMULATOR_H
 
 #include "mongo/pch.h"
 
@@ -258,3 +260,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_PIPELINE_ACCUMULATOR_H */

@@ -25,6 +25,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_TIMER_WIN___INL_H
+#define MONGO_UTIL_TIMER_WIN___INL_H
 
 #define MONGO_TIMER_IMPL_WIN32
 
@@ -39,3 +41,5 @@ namespace mongo {
     }
 
 }  // namespace mongo
+
+#endif /* MONGO_UTIL_TIMER_WIN___INL_H */

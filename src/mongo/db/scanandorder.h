@@ -19,6 +19,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_SCANANDORDER_H
+#define MONGO_DB_SCANANDORDER_H
 
 #include "indexkey.h"
 #include "queryutil.h"
@@ -123,3 +125,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_SCANANDORDER_H */

@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_INTRUSIVE_COUNTER_H
+#define MONGO_UTIL_INTRUSIVE_COUNTER_H
 
 #include <boost/intrusive_ptr.hpp>
 #include <boost/noncopyable.hpp>
@@ -77,3 +79,5 @@ namespace mongo {
     }
 
 };
+
+#endif /* MONGO_UTIL_INTRUSIVE_COUNTER_H */

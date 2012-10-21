@@ -15,6 +15,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_CMDLINE_H
+#define MONGO_DB_CMDLINE_H
 
 #include "mongo/pch.h"
 #include "jsobj.h"
@@ -214,3 +216,5 @@ namespace mongo {
 
 }
 
+
+#endif /* MONGO_DB_CMDLINE_H */

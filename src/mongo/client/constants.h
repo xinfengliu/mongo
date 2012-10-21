@@ -1,6 +1,8 @@
 // constants.h
 
 #pragma once
+#ifndef MONGO_CLIENT_CONSTANTS_H
+#define MONGO_CLIENT_CONSTANTS_H
 
 namespace mongo {
 
@@ -24,3 +26,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_CLIENT_CONSTANTS_H */

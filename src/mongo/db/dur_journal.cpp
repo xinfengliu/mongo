@@ -64,12 +64,18 @@ namespace mongo {
         unsigned long long DataLimitPerJournalFile = (sizeof(void*)==4) ? 256 * 1024 * 1024 : 1 * 1024 * 1024 * 1024;
 #endif
 
+
+//SunCC compute wrong size for packed structs. 
+//current workaround is reorder member in db_journalformat.h. -lxf
+//need investigation
+//#ifndef __SUNPRO_CC  
         BOOST_STATIC_ASSERT( sizeof(Checksum) == 16 );
         BOOST_STATIC_ASSERT( sizeof(JHeader) == 8192 );
         BOOST_STATIC_ASSERT( sizeof(JSectHeader) == 20 );
         BOOST_STATIC_ASSERT( sizeof(JSectFooter) == 32 );
         BOOST_STATIC_ASSERT( sizeof(JEntry) == 12 );
         BOOST_STATIC_ASSERT( sizeof(LSNFile) == 88 );
+//#endif
 
         bool usingPreallocate = false;
 

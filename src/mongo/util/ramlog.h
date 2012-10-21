@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_RAMLOG_H
+#define MONGO_UTIL_RAMLOG_H
 
 #include "log.h"
 
@@ -63,3 +65,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_RAMLOG_H */

@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_MODEL_H
+#define MONGO_CLIENT_MODEL_H
 
 #include "mongo/bson/bsonelement.h"
 #include "mongo/bson/bsonobj.h"
@@ -59,3 +61,5 @@ namespace mongo {
 
 } // namespace mongo
 
+
+#endif /* MONGO_CLIENT_MODEL_H */

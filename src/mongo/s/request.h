@@ -17,6 +17,8 @@
 
 
 #pragma once
+#ifndef MONGO_S_REQUEST_H
+#define MONGO_S_REQUEST_H
 
 #include "mongo/pch.h"
 #include "../util/net/message.h"
@@ -115,3 +117,5 @@ namespace mongo {
 }
 
 #include "strategy.h"
+
+#endif /* MONGO_S_REQUEST_H */

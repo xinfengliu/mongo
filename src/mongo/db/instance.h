@@ -18,6 +18,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_INSTANCE_H
+#define MONGO_DB_INSTANCE_H
 
 
 #include "curop-inl.h"
@@ -135,3 +137,5 @@ namespace mongo {
     void exitCleanly( ExitCode code );
 
 } // namespace mongo
+
+#endif /* MONGO_DB_INSTANCE_H */

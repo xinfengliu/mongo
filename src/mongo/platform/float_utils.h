@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_PLATFORM_FLOAT_UTILS_H
+#define MONGO_PLATFORM_FLOAT_UTILS_H
 
 namespace mongo {
 
@@ -40,3 +42,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_PLATFORM_FLOAT_UTILS_H */

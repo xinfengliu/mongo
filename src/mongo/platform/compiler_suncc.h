@@ -1,27 +1,8 @@
-// @file mongo/platform/compiler_msvc.h
-
-/*
- * Copyright 2012 10gen Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 #pragma once
-#ifndef MONGO_PLATFORM_COMPILER_MSVC_H
-#define MONGO_PLATFORM_COMPILER_MSVC_H
-
+#ifndef MONGO_PLATFORM_COMPILER_SUNCC_H
+#define MONGO_PLATFORM_COMPILER_SUNCC_H
 /**
- * Compiler-specific implementations for MSVC.
+ * Compiler-specific implementations for Sun CC.
  */
 
 /**
@@ -30,12 +11,12 @@
  * Correct:
  *    MONGO_COMPILER_NORETURN void myAbortFunction();
  */
-#define MONGO_COMPILER_NORETURN __declspec(noreturn)
+#define MONGO_COMPILER_NORETURN __attribute__((__noreturn__))
 
 /**
  * Use this to decorate unused variable declarations.
  */
-#define MONGO_COMPILER_VARIABLE_UNUSED
+#define MONGO_COMPILER_VARIABLE_UNUSED 
 
 /**
  * Use this on a type declaration to specify its minimum alignment.
@@ -50,7 +31,7 @@
  *    MONGO_COMPILER_ALIGN_TYPE(16) class MyClass {...};
  *    class MyClass{...} MONGO_COMPILER_ALIGN_TYPE(16);
  */
-#define MONGO_COMPILER_ALIGN_TYPE(ALIGNMENT) __declspec( align( ALIGNMENT ) )
+#define MONGO_COMPILER_ALIGN_TYPE(ALIGNMENT) __attribute__(( __aligned__(ALIGNMENT) ))
 
 /**
  * Use this on a global variable or structure field declaration to specify that it must be allocated
@@ -65,11 +46,11 @@
  *        MONGO_COMPILER_ALIGN_VARIABLE(8) char a;
  *    };
  *
- *    MONGO_COMPILER_ALIGN_VARIABLE class MyClass {...} singletonInstance;
+ *    MONGO_COMPILER_ALIGN_VARIABLE(8) class MyClass {...} singletonInstance;
  *
  * Incorrect:
  *    int MONGO_COMPILER_ALIGN_VARIABLE(16) a, b;
  */
-#define MONGO_COMPILER_ALIGN_VARIABLE(ALIGNMENT) __declspec( align( ALIGNMENT ) )
+#define MONGO_COMPILER_ALIGN_VARIABLE(ALIGNMENT) __attribute__(( __aligned__(ALIGNMENT) ))
 
-#endif /* MONGO_PLATFORM_COMPILER_MSVC_H */
+#endif /* MONGO_PLATFORM_COMPILER_SUNCC_H */

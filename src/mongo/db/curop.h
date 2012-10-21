@@ -18,6 +18,8 @@
 
 
 #pragma once
+#ifndef MONGO_DB_CUROP_H
+#define MONGO_DB_CUROP_H
 
 #include "namespace-inl.h"
 #include "client.h"
@@ -280,3 +282,5 @@ namespace mongo {
     } killCurrentOp;
 
 }
+
+#endif /* MONGO_DB_CUROP_H */

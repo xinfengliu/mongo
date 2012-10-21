@@ -288,7 +288,7 @@ namespace mongo {
 
         // We will be removing from the front so reverse for now. undone later
         // TODO: maybe sourceVector should be a deque
-        reverse(sourceVector.begin(), sourceVector.end());
+        std::reverse(sourceVector.begin(), sourceVector.end());
 
         /*
           Run through the pipeline, looking for points to split it into
@@ -315,7 +315,7 @@ namespace mongo {
                 if (routerSource)          this->sourceVector.push_back(routerSource);
 
                 // put the sourceVector back in the correct order and exit the loop
-                reverse(sourceVector.begin(), sourceVector.end());
+                std::reverse(sourceVector.begin(), sourceVector.end());
                 break;
             }
         }

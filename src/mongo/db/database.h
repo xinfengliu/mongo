@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_DATABASE_H
+#define MONGO_DB_DATABASE_H
 
 #include "mongo/db/cmdline.h"
 #include "mongo/db/namespace_details.h"
@@ -152,3 +154,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_DATABASE_H */

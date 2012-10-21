@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_NAMESPACE_H
+#define MONGO_DB_NAMESPACE_H
 
 #include "mongo/pch.h"
 
@@ -60,3 +62,5 @@ namespace mongo {
 #pragma pack()
 
 } // namespace mongo
+
+#endif /* MONGO_DB_NAMESPACE_H */

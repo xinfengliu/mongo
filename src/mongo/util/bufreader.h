@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_UTIL_BUFREADER_H
+#define MONGO_UTIL_BUFREADER_H
 
 namespace mongo {
 
@@ -98,3 +100,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_BUFREADER_H */

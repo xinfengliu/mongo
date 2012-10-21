@@ -18,6 +18,8 @@
 */
 
 #pragma once
+#ifndef MONGO_UTIL_ADMIN_ACCESS_H
+#define MONGO_UTIL_ADMIN_ACCESS_H
 
 namespace mongo {
 
@@ -50,3 +52,5 @@ namespace mongo {
     };
 
 }  // namespace mongo
+
+#endif /* MONGO_UTIL_ADMIN_ACCESS_H */

@@ -21,6 +21,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_HASHER_H
+#define MONGO_DB_HASHER_H
 
 #include "mongo/pch.h"
 #include "mongo/bson/bsonelement.h"
@@ -94,3 +96,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_HASHER_H */

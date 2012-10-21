@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_DBCLIENTCURSOR_H
+#define MONGO_CLIENT_DBCLIENTCURSOR_H
 
 #include "mongo/pch.h"
 
@@ -261,3 +263,5 @@ namespace mongo {
 
 } // namespace mongo
 
+
+#endif /* MONGO_CLIENT_DBCLIENTCURSOR_H */

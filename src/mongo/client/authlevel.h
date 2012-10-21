@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_AUTHLEVEL_H
+#define MONGO_CLIENT_AUTHLEVEL_H
 
 #include <string>
 
@@ -40,3 +42,5 @@ namespace mongo {
         std::string user;
     };
 }  // namespace mongo
+
+#endif /* MONGO_CLIENT_AUTHLEVEL_H */

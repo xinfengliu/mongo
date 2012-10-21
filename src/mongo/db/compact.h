@@ -15,6 +15,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_COMPACT_H
+#define MONGO_DB_COMPACT_H
 
 #include "mongo/db/extsort.h"
 
@@ -48,3 +50,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_COMPACT_H */

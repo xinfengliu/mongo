@@ -16,8 +16,10 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_INLINE_DECLS_H
+#define MONGO_BSON_INLINE_DECLS_H
 
-#if defined(__GNUC__)
+#if defined(__GNUC__) || defined(__SUNPRO_CC)
 
 #define NOINLINE_DECL __attribute__((noinline))
 #define PACKED_DECL __attribute__((packed))
@@ -69,3 +71,5 @@ namespace mongo {
 #endif
 
 }
+
+#endif /* MONGO_BSON_INLINE_DECLS_H */

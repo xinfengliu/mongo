@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_QUERYPATTERN_H
+#define MONGO_DB_QUERYPATTERN_H
 
 #include "jsobj.h"
 
@@ -116,3 +118,5 @@ namespace mongo {
     }
         
 } // namespace mongo
+
+#endif /* MONGO_DB_QUERYPATTERN_H */

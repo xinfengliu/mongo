@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_REPL_RS_H
+#define MONGO_DB_REPL_RS_H
 
 #include "mongo/db/commands.h"
 #include "mongo/db/oplog.h"
@@ -671,3 +673,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_DB_REPL_RS_H */

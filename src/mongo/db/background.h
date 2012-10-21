@@ -20,6 +20,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_BACKGROUND_H
+#define MONGO_DB_BACKGROUND_H
 
 #include "mongo/db/namespacestring.h"
 
@@ -57,3 +59,5 @@ namespace mongo {
 
 } // namespace mongo
 
+
+#endif /* MONGO_DB_BACKGROUND_H */

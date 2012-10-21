@@ -26,6 +26,9 @@
 
 #include "mongo/util/assert_util.h"
 
+#ifdef __SUNPRO_CC
+#include <stdio.h> //for sscanf
+#endif
 
 namespace mongo {
 

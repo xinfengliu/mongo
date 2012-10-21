@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_LRUISHMAP_H
+#define MONGO_UTIL_LRUISHMAP_H
 
 #include "mongo/pch.h"
 #include "../util/goodies.h"
@@ -76,3 +78,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_LRUISHMAP_H */

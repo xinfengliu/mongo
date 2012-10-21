@@ -23,6 +23,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_CLIENT_H
+#define MONGO_DB_CLIENT_H
 
 #include "mongo/pch.h"
 #include "security.h"
@@ -265,3 +267,5 @@ namespace mongo {
     inline bool haveClient() { return currentClient.get() > 0; }
 
 };
+
+#endif /* MONGO_DB_CLIENT_H */

@@ -19,6 +19,8 @@
 */
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_VALUE_H
+#define MONGO_UTIL_CONCURRENCY_VALUE_H
 
 #include "spin_lock.h"
 
@@ -83,3 +85,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_VALUE_H */

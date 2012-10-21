@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_NET_LISTEN_H
+#define MONGO_UTIL_NET_LISTEN_H
 
 #include "sock.h"
 #include "mongo/util/concurrency/ticketholder.h"
@@ -196,3 +198,5 @@ namespace mongo {
     extern TicketHolder connTicketHolder;
 
 }
+
+#endif /* MONGO_UTIL_NET_LISTEN_H */

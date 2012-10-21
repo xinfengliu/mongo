@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_SHARD_H
+#define MONGO_S_SHARD_H
 
 #include "mongo/pch.h"
 
@@ -320,3 +322,5 @@ namespace mongo {
         bool _shardedConnections;
     };
 }
+
+#endif /* MONGO_S_SHARD_H */

@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_REPL_BGSYNC_H
+#define MONGO_DB_REPL_BGSYNC_H
 
 #include <boost/thread/mutex.hpp>
 
@@ -141,3 +143,5 @@ namespace replset {
 
 } // namespace replset
 } // namespace mongo
+
+#endif /* MONGO_DB_REPL_BGSYNC_H */

@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_DUR_JOURNALIMPL_H
+#define MONGO_DB_DUR_JOURNALIMPL_H
 
 #include "dur_journalformat.h"
 #include "../util/logfile.h"
@@ -101,3 +103,5 @@ namespace mongo {
 
     }
 }
+
+#endif /* MONGO_DB_DUR_JOURNALIMPL_H */

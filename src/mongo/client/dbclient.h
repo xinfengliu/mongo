@@ -20,6 +20,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_DBCLIENT_H
+#define MONGO_CLIENT_DBCLIENT_H
 
 #ifdef MONGO_EXPOSE_MACROS
 #error dbclient.h is for C++ driver consumer use only
@@ -38,3 +40,5 @@
 #include "mongo/client/syncclusterconnection.h"
 
 #include "mongo/client/undef_macros.h"
+
+#endif /* MONGO_CLIENT_DBCLIENT_H */

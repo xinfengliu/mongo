@@ -14,6 +14,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_TOUCH_PAGES_H
+#define MONGO_UTIL_TOUCH_PAGES_H
 
 #include <string>
 
@@ -28,3 +30,5 @@ namespace mongo {
     // Additionally takes an Extent pointer for use on other platforms.
     void touch_pages( HANDLE fd, int offset, size_t length, const Extent* ext );
 }
+
+#endif /* MONGO_UTIL_TOUCH_PAGES_H */

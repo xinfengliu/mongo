@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_BASE___H
+#define MONGO_UTIL_BASE___H
 
 namespace mongo {
     namespace base64 {
@@ -66,3 +68,5 @@ namespace mongo {
         void testAlphabet();
     }
 }
+
+#endif /* MONGO_UTIL_BASE___H */

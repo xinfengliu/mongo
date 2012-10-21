@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_PIPELINE_EXPRESSION_H
+#define MONGO_DB_PIPELINE_EXPRESSION_H
 
 #include "mongo/pch.h"
 
@@ -1197,3 +1199,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_DB_PIPELINE_EXPRESSION_H */

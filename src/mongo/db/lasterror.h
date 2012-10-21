@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_LASTERROR_H
+#define MONGO_DB_LASTERROR_H
 
 #include "mongo/bson/oid.h"
 
@@ -150,3 +152,5 @@ namespace mongo {
     void setLastError(int code , const char *msg);
 
 } // namespace mongo
+
+#endif /* MONGO_DB_LASTERROR_H */

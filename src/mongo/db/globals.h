@@ -2,6 +2,8 @@
 // grouping of global variables to make concurrency work clearer
 
 #pragma once
+#ifndef MONGO_DB_GLOBALS_H
+#define MONGO_DB_GLOBALS_H
 
 namespace mongo {
 
@@ -52,3 +54,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_GLOBALS_H */

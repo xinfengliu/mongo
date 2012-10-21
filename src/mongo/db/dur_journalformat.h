@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_DUR_JOURNALFORMAT_H
+#define MONGO_DB_DUR_JOURNALFORMAT_H
 
 namespace mongo {
 
@@ -29,6 +31,9 @@ namespace mongo {
             there is nothing important int this header at this time.  except perhaps version #.
         */
         struct JHeader {
+#ifdef __SUNPRO_CC   //dirty hack -lxf
+            unsigned long long fileId; // unique identifier that will be in each JSectHeader. important as we recycle prealloced files
+#endif
             JHeader() { }
             JHeader(string fname);
 
@@ -50,7 +55,9 @@ namespace mongo {
             char dbpath[128]; // path/filename of this file for human reading and diagnostics.  not used by code.
             char n3, n4;      // '\n', '\n'
 
+#ifndef __SUNPRO_CC
             unsigned long long fileId; // unique identifier that will be in each JSectHeader. important as we recycle prealloced files
+#endif
 
             char reserved3[8026]; // 8KB total for the file header
             char txt2[2];         // "\n\n" at the end
@@ -64,8 +71,10 @@ namespace mongo {
             header and footer are not compressed, just the stuff in between.
         */
         struct JSectHeader {
+#ifndef __SUNPRO_CC
         private:
             unsigned _sectionLen;          // unpadded length in bytes of the whole section
+#endif
         public:
             unsigned long long seqNumber;  // sequence number that can be used on recovery to not do too much work
             unsigned long long fileId;     // matches JHeader::fileId
@@ -80,6 +89,10 @@ namespace mongo {
                 dassert( x % Alignment == 0 );
                 return x;
             }
+#ifdef __SUNPRO_CC   //dirty hack. -lxf
+        //private:
+            unsigned _sectionLen;          // unpadded length in bytes of the whole section
+#endif
         };
 
         /** an individual write operation within a group commit section.  Either the entire section should
@@ -131,11 +144,16 @@ namespace mongo {
 
         /** group commit section footer. md5 is a key field. */
         struct JSectFooter {
+#ifdef __SUNPRO_CC  //dirty hack. -lxf
+            unsigned long long reserved;
+#endif
             JSectFooter();
             JSectFooter(const void* begin, int len); // needs buffer to compute hash
             unsigned sentinel;
             unsigned char hash[16];
+#ifndef __SUNPRO_CC
             unsigned long long reserved;
+#endif
             char magic[4]; // "\n\n\n\n"
 
             /** used by recovery to see if buffer is valid
@@ -172,3 +190,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_DB_DUR_JOURNALFORMAT_H */

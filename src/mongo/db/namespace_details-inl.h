@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_NAMESPACE_DETAILS_INL_H
+#define MONGO_DB_NAMESPACE_DETAILS_INL_H
 
 #include "mongo/db/namespace_details.h"
 
@@ -99,3 +101,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_DB_NAMESPACE_DETAILS_INL_H */

@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_NET_MINIWEBSERVER_H
+#define MONGO_UTIL_NET_MINIWEBSERVER_H
 
 #include "mongo/pch.h"
 #include "message.h"
@@ -58,3 +60,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_NET_MINIWEBSERVER_H */

@@ -18,6 +18,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_INTROSPECT_H
+#define MONGO_DB_INTROSPECT_H
 
 #include "mongo/pch.h"
 #include "jsobj.h"
@@ -41,3 +43,5 @@ namespace mongo {
     NamespaceDetails* getOrCreateProfileCollection(Database *db, bool force = false);
 
 } // namespace mongo
+
+#endif /* MONGO_DB_INTROSPECT_H */

@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_NET_SOCK_H
+#define MONGO_UTIL_NET_SOCK_H
 
 #include "mongo/pch.h"
 
@@ -274,3 +276,5 @@ namespace mongo {
 
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_NET_SOCK_H */

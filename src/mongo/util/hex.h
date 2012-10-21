@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_HEX_H
+#define MONGO_UTIL_HEX_H
 
 #include <string>
 
@@ -69,3 +71,5 @@ namespace mongo {
         return out.str();
     }
 }
+
+#endif /* MONGO_UTIL_HEX_H */

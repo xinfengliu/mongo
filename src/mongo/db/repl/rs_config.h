@@ -19,6 +19,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_REPL_RS_CONFIG_H
+#define MONGO_DB_REPL_RS_CONFIG_H
 
 #include "mongo/db/repl/health.h"
 #include "mongo/util/concurrency/list.h"
@@ -256,3 +258,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_REPL_RS_CONFIG_H */

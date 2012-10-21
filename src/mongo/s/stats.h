@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_S_STATS_H
+#define MONGO_S_STATS_H
 
 #include "mongo/pch.h"
 #include "../db/stats/counters.h"
@@ -28,3 +30,5 @@ namespace mongo {
 
     extern GenericCounter shardedCursorTypes;
 }
+
+#endif /* MONGO_S_STATS_H */

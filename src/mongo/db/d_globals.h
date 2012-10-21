@@ -5,6 +5,8 @@
 //
 
 #pragma once
+#ifndef MONGO_DB_D_GLOBALS_H
+#define MONGO_DB_D_GLOBALS_H
 
 namespace mongo { 
 
@@ -22,3 +24,5 @@ namespace mongo {
     extern DGlobals d;
 
 };
+
+#endif /* MONGO_DB_D_GLOBALS_H */

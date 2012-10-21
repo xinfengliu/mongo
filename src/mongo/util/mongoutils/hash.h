@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_MONGOUTILS_HASH_H
+#define MONGO_UTIL_MONGOUTILS_HASH_H
 
 namespace mongoutils {
 
@@ -39,3 +41,5 @@ namespace mongoutils {
     }
 
 }
+
+#endif /* MONGO_UTIL_MONGOUTILS_HASH_H */

@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_JSOBJMANIPULATOR_H
+#define MONGO_DB_JSOBJMANIPULATOR_H
 
 #include "jsobj.h"
 //#include "dur.h"
@@ -93,3 +95,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_JSOBJMANIPULATOR_H */

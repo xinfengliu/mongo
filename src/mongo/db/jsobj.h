@@ -27,6 +27,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_JSOBJ_H
+#define MONGO_DB_JSOBJ_H
 
 #include "mongo/pch.h"
 #include "../bson/util/builder.h"
@@ -43,3 +45,5 @@
 #include "../bson/stringdata.h"
 #include "../bson/bson_db.h"
 
+
+#endif /* MONGO_DB_JSOBJ_H */

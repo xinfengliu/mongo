@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_OID_H
+#define MONGO_BSON_OID_H
 
 #include <string>
 
@@ -156,3 +158,5 @@ namespace mongo {
      std::ostream& operator<<( std::ostream &s, const OID &o );
 
 }
+
+#endif /* MONGO_BSON_OID_H */

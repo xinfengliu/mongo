@@ -24,6 +24,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_BSON_DB_H
+#define MONGO_BSON_BSON_DB_H
 
 #include "../util/optime.h"
 #include "../util/time_support.h"
@@ -86,3 +88,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_BSON_BSON_DB_H */

@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_MODULE_H
+#define MONGO_DB_MODULE_H
 
 #include "mongo/pch.h"
 #include <boost/program_options.hpp>
@@ -68,3 +70,5 @@ namespace mongo {
         boost::program_options::options_description _options;
     };
 }
+
+#endif /* MONGO_DB_MODULE_H */

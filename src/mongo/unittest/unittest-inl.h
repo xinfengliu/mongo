@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UNITTEST_UNITTEST_INL_H
+#define MONGO_UNITTEST_UNITTEST_INL_H
 
 namespace mongo {
     namespace unittest {
@@ -36,3 +38,5 @@ namespace mongo {
 
     }  // namespace mongo
 }  // namespace unittest
+
+#endif /* MONGO_UNITTEST_UNITTEST_INL_H */

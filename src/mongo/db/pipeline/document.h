@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_PIPELINE_DOCUMENT_H
+#define MONGO_DB_PIPELINE_DOCUMENT_H
 
 #include "mongo/pch.h"
 
@@ -247,3 +249,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_DB_PIPELINE_DOCUMENT_H */

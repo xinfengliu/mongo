@@ -17,6 +17,8 @@
 
 
 #pragma once
+#ifndef MONGO_SHELL_SHELL_UTILS_H
+#define MONGO_SHELL_SHELL_UTILS_H
 
 #include "mongo/db/jsobj.h"
 
@@ -67,3 +69,5 @@ namespace mongo {
         extern ConnectionRegistry connectionRegistry;
     }
 }
+
+#endif /* MONGO_SHELL_SHELL_UTILS_H */

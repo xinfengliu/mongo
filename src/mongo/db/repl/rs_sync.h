@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_REPL_RS_SYNC_H
+#define MONGO_DB_REPL_RS_SYNC_H
 
 #include <deque>
 #include <vector>
@@ -111,3 +113,5 @@ namespace replset {
 
 } // namespace replset
 } // namespace mongo
+
+#endif /* MONGO_DB_REPL_RS_SYNC_H */

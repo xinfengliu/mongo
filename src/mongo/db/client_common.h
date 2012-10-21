@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_CLIENT_COMMON_H
+#define MONGO_DB_CLIENT_COMMON_H
 
 //#include "../pch.h"
 //#include "security.h"
@@ -45,3 +47,5 @@ namespace mongo {
         static ClientBasic* getCurrent();
     };
 }
+
+#endif /* MONGO_DB_CLIENT_COMMON_H */

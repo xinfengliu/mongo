@@ -19,6 +19,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_DBCLIENTINTERFACE_H
+#define MONGO_CLIENT_DBCLIENTINTERFACE_H
 
 #include "mongo/pch.h"
 
@@ -1181,3 +1183,5 @@ namespace mongo {
 } // namespace mongo
 
 #include "mongo/client/dbclientcursor.h"
+
+#endif /* MONGO_CLIENT_DBCLIENTINTERFACE_H */

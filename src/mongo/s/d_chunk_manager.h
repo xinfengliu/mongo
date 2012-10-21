@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_D_CHUNK_MANAGER_H
+#define MONGO_S_D_CHUNK_MANAGER_H
 
 #include "mongo/pch.h"
 
@@ -169,3 +171,5 @@ namespace mongo {
     };
 
 }  // namespace mongo
+
+#endif /* MONGO_S_D_CHUNK_MANAGER_H */

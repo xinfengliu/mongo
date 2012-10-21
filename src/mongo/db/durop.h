@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_DUROP_H
+#define MONGO_DB_DUROP_H
 
 #include "dur_journalformat.h"
 #include "../util/bufreader.h"
@@ -107,3 +109,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_DB_DUROP_H */

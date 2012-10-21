@@ -21,6 +21,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_DBHELPERS_H
+#define MONGO_DB_DBHELPERS_H
 
 #include "mongo/pch.h"
 #include "client.h"
@@ -196,3 +198,5 @@ namespace mongo {
 
 
 } // namespace mongo
+
+#endif /* MONGO_DB_DBHELPERS_H */

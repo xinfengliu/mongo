@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_MOVEABLEBUFFER_H
+#define MONGO_UTIL_MOVEABLEBUFFER_H
 
 namespace mongo {
 
@@ -49,3 +51,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_UTIL_MOVEABLEBUFFER_H */

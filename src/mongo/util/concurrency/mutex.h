@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_MUTEX_H
+#define MONGO_UTIL_CONCURRENCY_MUTEX_H
 
 #ifdef _WIN32
 #include "mongo/platform/windows_basic.h"
@@ -200,3 +202,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_MUTEX_H */

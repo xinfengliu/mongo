@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_RECORD_H
+#define MONGO_DB_RECORD_H
 
 #include "mongo/platform/atomic_word.h"
 
@@ -32,3 +34,5 @@ namespace mongo {
 
 
 }
+
+#endif /* MONGO_DB_RECORD_H */

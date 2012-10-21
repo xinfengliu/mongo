@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_BSONELEMENT_H
+#define MONGO_BSON_BSONELEMENT_H
 
 #include <string.h> // strlen
 #include <string>
@@ -646,3 +648,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_BSON_BSONELEMENT_H */

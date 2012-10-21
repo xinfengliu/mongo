@@ -18,6 +18,8 @@
 
 
 #pragma once
+#ifndef MONGO_DB_LOCKSTAT_H
+#define MONGO_DB_LOCKSTAT_H
 
 #include "util/timer.h"
 #include "mongo/platform/atomic_word.h"
@@ -51,3 +53,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_LOCKSTAT_H */

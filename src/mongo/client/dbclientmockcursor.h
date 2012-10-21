@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_DBCLIENTMOCKCURSOR_H
+#define MONGO_CLIENT_DBCLIENTMOCKCURSOR_H
 
 #include "dbclientcursor.h"
 
@@ -38,3 +40,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_CLIENT_DBCLIENTMOCKCURSOR_H */

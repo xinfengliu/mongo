@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_TOOLS_STAT_UTIL_H
+#define MONGO_TOOLS_STAT_UTIL_H
 
 #include "mongo/pch.h"
 #include "../db/jsobj.h"
@@ -114,3 +116,5 @@ namespace mongo {
     };
 }
 
+
+#endif /* MONGO_TOOLS_STAT_UTIL_H */

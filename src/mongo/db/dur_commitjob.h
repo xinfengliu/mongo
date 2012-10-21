@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_DUR_COMMITJOB_H
+#define MONGO_DB_DUR_COMMITJOB_H
 
 #include "../util/alignedbuilder.h"
 #include "../util/mongoutils/hash.h"
@@ -200,3 +202,5 @@ namespace mongo {
 
     }
 }
+
+#endif /* MONGO_DB_DUR_COMMITJOB_H */

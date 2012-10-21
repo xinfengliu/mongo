@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_INTERRUPT_STATUS_MONGOD_H
+#define MONGO_DB_INTERRUPT_STATUS_MONGOD_H
 
 #include "mongo/pch.h"
 #include "db/interrupt_status.h"
@@ -39,3 +41,5 @@ namespace mongo {
     };
 
 };
+
+#endif /* MONGO_DB_INTERRUPT_STATUS_MONGOD_H */

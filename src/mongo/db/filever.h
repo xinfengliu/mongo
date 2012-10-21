@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_FILEVER_H
+#define MONGO_DB_FILEVER_H
 
 namespace mongo {
 
@@ -28,3 +30,5 @@ namespace mongo {
 
 }
 
+
+#endif /* MONGO_DB_FILEVER_H */

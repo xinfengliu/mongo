@@ -21,6 +21,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_HASHTAB_H
+#define MONGO_UTIL_HASHTAB_H
 
 #include "mongo/pch.h"
 #include <map>
@@ -177,3 +179,5 @@ namespace mongo {
 #pragma pack()
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_HASHTAB_H */

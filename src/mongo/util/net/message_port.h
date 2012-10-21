@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_NET_MESSAGE_PORT_H
+#define MONGO_UTIL_NET_MESSAGE_PORT_H
 
 #include "sock.h"
 #include "message.h"
@@ -125,3 +127,5 @@ namespace mongo {
 
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_NET_MESSAGE_PORT_H */

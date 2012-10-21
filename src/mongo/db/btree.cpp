@@ -80,7 +80,11 @@ namespace mongo {
      * this error is ok/benign when doing a background indexing -- that logic in pdfile checks explicitly
      * for the 10287 error code.
      */
+#ifdef __SUNPRO_CC //this is weird. db/index.o need it. -lxf
+    void alreadyInIndex() {
+#else
     static void alreadyInIndex() {
+#endif
         // we don't use massert() here as that does logging and this is 'benign' - see catches in _indexRecord()
         throw MsgAssertionException(10287, "btree: key+recloc already in index");
     }

@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_UTIL_SIGNAL_HANDLERS_H
+#define MONGO_UTIL_SIGNAL_HANDLERS_H
 
 namespace mongo {
 
@@ -30,3 +32,5 @@ namespace mongo {
     void printStackAndExit( int signalNum );
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_SIGNAL_HANDLERS_H */

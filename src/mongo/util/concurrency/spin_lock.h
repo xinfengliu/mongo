@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_SPIN_LOCK_H
+#define MONGO_UTIL_CONCURRENCY_SPIN_LOCK_H
 
 #ifdef _WIN32
 #include "mongo/platform/windows_basic.h"
@@ -79,3 +81,5 @@ namespace mongo {
     };
 
 }  // namespace mongo
+
+#endif /* MONGO_UTIL_CONCURRENCY_SPIN_LOCK_H */

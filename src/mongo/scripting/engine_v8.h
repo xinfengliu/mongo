@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_SCRIPTING_ENGINE_V__H
+#define MONGO_SCRIPTING_ENGINE_V__H
 
 #include <vector>
 #include "engine.h"
@@ -267,3 +269,5 @@ namespace mongo {
     extern ScriptEngine * globalScriptEngine;
 
 }
+
+#endif /* MONGO_SCRIPTING_ENGINE_V__H */

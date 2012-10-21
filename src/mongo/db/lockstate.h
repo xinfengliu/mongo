@@ -18,6 +18,8 @@
 
 
 #pragma once
+#ifndef MONGO_DB_LOCKSTATE_H
+#define MONGO_DB_LOCKSTATE_H
 
 #include "mongo/db/d_concurrency.h"
 
@@ -145,3 +147,5 @@ namespace mongo {
 
 
 }
+
+#endif /* MONGO_DB_LOCKSTATE_H */

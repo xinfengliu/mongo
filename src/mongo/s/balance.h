@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_BALANCE_H
+#define MONGO_S_BALANCE_H
 
 #include "mongo/pch.h"
 #include "../util/background.h"
@@ -102,3 +104,5 @@ namespace mongo {
 
     extern Balancer balancer;
 }
+
+#endif /* MONGO_S_BALANCE_H */

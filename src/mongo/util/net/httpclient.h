@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_NET_HTTPCLIENT_H
+#define MONGO_UTIL_NET_HTTPCLIENT_H
 
 #include "mongo/pch.h"
 #include "sock.h"
@@ -76,3 +78,5 @@ namespace mongo {
 #endif
     };
 }
+
+#endif /* MONGO_UTIL_NET_HTTPCLIENT_H */

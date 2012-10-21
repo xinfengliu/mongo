@@ -22,6 +22,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_CONFIG_H
+#define MONGO_S_CONFIG_H
 
 #include "../db/namespace.h"
 #include "../client/model.h"
@@ -273,3 +275,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_S_CONFIG_H */

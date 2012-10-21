@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_QUERYUTIL_H
+#define MONGO_DB_QUERYUTIL_H
 
 #include "jsobj.h"
 #include "indexkey.h"
@@ -856,3 +858,5 @@ namespace mongo {
 } // namespace mongo
 
 #include "queryutil-inl.h"
+
+#endif /* MONGO_DB_QUERYUTIL_H */

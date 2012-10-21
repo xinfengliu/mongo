@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_SCRIPTING_V__WRAPPER_H
+#define MONGO_SCRIPTING_V__WRAPPER_H
 
 #include <v8.h>
 #include <cstring>
@@ -32,3 +34,5 @@ namespace mongo {
     WrapperHolder * createWrapperHolder( V8Scope* scope, const BSONObj * o , bool readOnly , bool iDelete );
 
 }
+
+#endif /* MONGO_SCRIPTING_V__WRAPPER_H */

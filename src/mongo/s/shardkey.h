@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_SHARDKEY_H
+#define MONGO_S_SHARDKEY_H
 
 namespace mongo {
 
@@ -127,3 +129,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_S_SHARDKEY_H */

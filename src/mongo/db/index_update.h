@@ -15,6 +15,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_INDEX_UPDATE_H
+#define MONGO_DB_INDEX_UPDATE_H
 
 #include "mongo/db/diskloc.h"
 #include "mongo/db/index.h"
@@ -49,3 +51,5 @@ namespace mongo {
     bool dropIndexes( NamespaceDetails *d, const char *ns, const char *name, string &errmsg, BSONObjBuilder &anObjBuilder, bool maydeleteIdIndex );
 
 }
+
+#endif /* MONGO_DB_INDEX_UPDATE_H */

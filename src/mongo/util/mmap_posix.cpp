@@ -46,7 +46,7 @@ namespace mongo {
     void MemoryMappedFile::close() {
         LockMongoFilesShared::assertExclusivelyLocked();
         for( vector<void*>::iterator i = views.begin(); i != views.end(); i++ ) {
-            munmap(*i,len);
+            munmap((char *)*i,len);
         }
         views.clear();
 
@@ -179,7 +179,7 @@ namespace mongo {
 
     void* MemoryMappedFile::remapPrivateView(void *oldPrivateAddr) {
         // don't unmap, just mmap over the old region
-        void * x = mmap( oldPrivateAddr, len , PROT_READ|PROT_WRITE , MAP_PRIVATE|MAP_NORESERVE|MAP_FIXED , fd , 0 );
+        void * x = mmap( (char *)oldPrivateAddr, len , PROT_READ|PROT_WRITE , MAP_PRIVATE|MAP_NORESERVE|MAP_FIXED , fd , 0 );
         if( x == MAP_FAILED ) {
             int err = errno;
             error()  << "13601 Couldn't remap private view: " << errnoWithDescription(err) << endl;
@@ -194,7 +194,7 @@ namespace mongo {
     void MemoryMappedFile::flush(bool sync) {
         if ( views.empty() || fd == 0 )
             return;
-        if ( msync(viewForFlushing(), len, sync ? MS_SYNC : MS_ASYNC) )
+        if ( msync((char *)viewForFlushing(), len, sync ? MS_SYNC : MS_ASYNC) )
             problem() << "msync " << errnoWithDescription() << endl;
     }
 
@@ -206,7 +206,7 @@ namespace mongo {
 
         void flush() {
             if ( _view && _fd )
-                if ( msync(_view, _len, MS_SYNC ) )
+                if ( msync((char *)_view, _len, MS_SYNC ) )
                     problem() << "msync " << errnoWithDescription() << endl;
 
         }

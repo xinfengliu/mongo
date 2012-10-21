@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_PLATFORM_COMPILER_H
+#define MONGO_PLATFORM_COMPILER_H
 
 /**
  * Include "mongo/platform/compiler.h" to get compiler-specific macro definitions and utilities.
@@ -26,6 +28,10 @@
 #include "mongo/platform/compiler_msvc.h"
 #elif defined(__GNUC__)
 #include "mongo/platform/compiler_gcc.h"
+#elif defined(__SUNPRO_CC)
+#include "mongo/platform/compiler_suncc.h"
 #else
 #error "Unsupported compiler family"
 #endif
+
+#endif /* MONGO_PLATFORM_COMPILER_H */

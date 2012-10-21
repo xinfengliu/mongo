@@ -18,6 +18,10 @@
 // public interface, but are currently accessed by other modules within mongod.
 
 #pragma once
+#ifndef MONGO_DB_PDFILE_PRIVATE_H
+#define MONGO_DB_PDFILE_PRIVATE_H
 namespace mongo {
     extern bool inDBRepair;
 }
+
+#endif /* MONGO_DB_PDFILE_PRIVATE_H */

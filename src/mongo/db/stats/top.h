@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_STATS_TOP_H
+#define MONGO_DB_STATS_TOP_H
 
 #include <boost/date_time/posix_time/posix_time.hpp>
 
@@ -85,3 +87,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_STATS_TOP_H */

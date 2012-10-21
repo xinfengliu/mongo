@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_DISTLOCK_H
+#define MONGO_CLIENT_DISTLOCK_H
 
 #include "mongo/pch.h"
 #include "connpool.h"
@@ -254,3 +256,5 @@ namespace mongo {
 
 }
 
+
+#endif /* MONGO_CLIENT_DISTLOCK_H */

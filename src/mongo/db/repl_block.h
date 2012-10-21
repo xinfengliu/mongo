@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_REPL_BLOCK_H
+#define MONGO_DB_REPL_BLOCK_H
 
 #include "mongo/pch.h"
 #include "client.h"
@@ -39,3 +41,5 @@ namespace mongo {
     void resetSlaveCache();
     unsigned getSlaveCount();
 }
+
+#endif /* MONGO_DB_REPL_BLOCK_H */

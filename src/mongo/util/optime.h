@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_OPTIME_H
+#define MONGO_UTIL_OPTIME_H
 
 #include <boost/thread/condition.hpp>
 
@@ -147,3 +149,5 @@ namespace mongo {
 #pragma pack()
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_OPTIME_H */

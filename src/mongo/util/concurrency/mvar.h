@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_MVAR_H
+#define MONGO_UTIL_CONCURRENCY_MVAR_H
 
 #include <boost/thread/recursive_mutex.hpp>
 #include <boost/thread/condition.hpp>
@@ -119,3 +121,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_MVAR_H */

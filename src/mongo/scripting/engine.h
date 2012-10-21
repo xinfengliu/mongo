@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_SCRIPTING_ENGINE_H
+#define MONGO_SCRIPTING_ENGINE_H
 
 #include "mongo/db/jsobj.h"
 
@@ -229,3 +231,5 @@ namespace mongo {
 
     extern ScriptEngine * globalScriptEngine;
 }
+
+#endif /* MONGO_SCRIPTING_ENGINE_H */

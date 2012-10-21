@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_JSON_H
+#define MONGO_DB_JSON_H
 
 #include <string>
 
@@ -40,3 +42,5 @@ namespace mongo {
     BSONObj fromjson(const char *str, int* len=NULL);
 
 } // namespace mongo
+
+#endif /* MONGO_DB_JSON_H */

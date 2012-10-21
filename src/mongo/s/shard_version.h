@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_SHARD_VERSION_H
+#define MONGO_S_SHARD_VERSION_H
 
 namespace mongo {
 
@@ -30,3 +32,5 @@ namespace mongo {
 
 
 }  // namespace mongo
+
+#endif /* MONGO_S_SHARD_VERSION_H */

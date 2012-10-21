@@ -1,4 +1,6 @@
 #pragma once
+#ifndef MONGO_UTIL_CHECKSUM_H
+#define MONGO_UTIL_CHECKSUM_H
 #include "mongo/pch.h"
 namespace mongo {
     /** a simple, rather dumb, but very fast checksum.  see perftests.cpp for unit tests. */
@@ -35,3 +37,5 @@ namespace mongo {
         bool operator!=(const Checksum& rhs) const { return words[0]!=rhs.words[0] || words[1]!=rhs.words[1]; }
     };
 }
+
+#endif /* MONGO_UTIL_CHECKSUM_H */

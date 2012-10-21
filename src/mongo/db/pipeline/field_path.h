@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_PIPELINE_FIELD_PATH_H
+#define MONGO_DB_PIPELINE_FIELD_PATH_H
 
 #include "mongo/pch.h"
 
@@ -113,3 +115,5 @@ namespace mongo {
 
 }
 
+
+#endif /* MONGO_DB_PIPELINE_FIELD_PATH_H */

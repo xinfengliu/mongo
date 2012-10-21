@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_UTIL_H
+#define MONGO_S_UTIL_H
 
 #include "mongo/pch.h"
 #include "mongo/db/jsobj.h"
@@ -443,3 +445,5 @@ namespace mongo {
     extern VersionManager versionManager;
 
 }
+
+#endif /* MONGO_S_UTIL_H */

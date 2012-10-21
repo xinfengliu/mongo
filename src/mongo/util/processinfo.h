@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_PROCESSINFO_H
+#define MONGO_UTIL_PROCESSINFO_H
 
 #include <sys/types.h>
 #include <string>
@@ -157,3 +159,5 @@ namespace mongo {
     void printMemInfo( const char * whereContextStr = 0 );
 
 }
+
+#endif /* MONGO_UTIL_PROCESSINFO_H */

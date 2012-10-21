@@ -17,6 +17,8 @@
 
 
 #pragma once
+#ifndef MONGO_SHELL_SHELL_UTILS_EXTENDED_H
+#define MONGO_SHELL_SHELL_UTILS_EXTENDED_H
 
 namespace mongo {
 
@@ -26,3 +28,5 @@ namespace mongo {
         void installShellUtilsExtended( Scope& scope );
     }
 }
+
+#endif /* MONGO_SHELL_SHELL_UTILS_EXTENDED_H */

@@ -21,9 +21,13 @@
 
 using namespace std;
 
-#ifndef _WIN32
-#include <cxxabi.h>
-#include <sys/file.h>
+#if !defined(_WIN32) 
+  #if defined(__SUNPRO_CC)
+    #include <demangle.h>
+  #else
+    #include <cxxabi.h>
+    #include <sys/file.h>
+  #endif
 #endif
 
 #include "mongo/bson/bsonobjbuilder.h"
@@ -180,6 +184,15 @@ namespace mongo {
     string demangleName( const type_info& typeinfo ) {
 #ifdef _WIN32
         return typeinfo.name();
+#elif defined(__SUNPRO_CC)
+	char result[4096]; //should be enough?
+	int ret = cplus_demangle(typeinfo.name(), result, sizeof(result));
+	if(ret == 0) {
+	    result[4095] = '\0';
+	    return string(result);
+	}else {
+	    return string(typeinfo.name());
+	}
 #else
         int status;
 

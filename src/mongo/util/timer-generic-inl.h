@@ -25,6 +25,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_TIMER_GENERIC_INL_H
+#define MONGO_UTIL_TIMER_GENERIC_INL_H
 
 #define MONGO_TIMER_IMPL_GENERIC
 
@@ -35,3 +37,5 @@ namespace mongo {
     unsigned long long Timer::now() const { return curTimeMicros64(); }
 
 }  // namespace mongo
+
+#endif /* MONGO_UTIL_TIMER_GENERIC_INL_H */

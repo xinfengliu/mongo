@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_S_WRITEBACK_LISTENER_H
+#define MONGO_S_WRITEBACK_LISTENER_H
 
 #include "mongo/pch.h"
 
@@ -87,3 +89,5 @@ namespace mongo {
     void waitForWriteback( const OID& oid );
 
 }  // namespace mongo
+
+#endif /* MONGO_S_WRITEBACK_LISTENER_H */

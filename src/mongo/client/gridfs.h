@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_GRIDFS_H
+#define MONGO_CLIENT_GRIDFS_H
 
 #include "mongo/bson/bsonelement.h"
 #include "mongo/bson/bsonobj.h"
@@ -204,3 +206,5 @@ namespace mongo {
         friend class GridFS;
     };
 }
+
+#endif /* MONGO_CLIENT_GRIDFS_H */

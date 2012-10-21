@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_NET_MESSAGE_H
+#define MONGO_UTIL_NET_MESSAGE_H
 
 #include "sock.h"
 #include "../../bson/util/atomic_int.h"
@@ -302,3 +304,5 @@ namespace mongo {
 
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_NET_MESSAGE_H */

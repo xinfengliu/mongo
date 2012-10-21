@@ -1,4 +1,6 @@
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_SIMPLERWLOCK_H
+#define MONGO_UTIL_CONCURRENCY_SIMPLERWLOCK_H
 
 #include "mongo/bson/util/atomic_int.h"
 
@@ -40,3 +42,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_SIMPLERWLOCK_H */

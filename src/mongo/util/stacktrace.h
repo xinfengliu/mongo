@@ -5,6 +5,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_STACKTRACE_H
+#define MONGO_UTIL_STACKTRACE_H
 
 #include <iostream>
 
@@ -21,3 +23,5 @@ namespace mongo {
 #endif
 
 }  // namespace mongo
+
+#endif /* MONGO_UTIL_STACKTRACE_H */

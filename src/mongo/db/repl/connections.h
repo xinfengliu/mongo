@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_REPL_CONNECTIONS_H
+#define MONGO_DB_REPL_CONNECTIONS_H
 
 #include <map>
 #include "../security_common.h"
@@ -147,3 +149,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_DB_REPL_CONNECTIONS_H */

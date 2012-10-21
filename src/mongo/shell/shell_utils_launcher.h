@@ -17,6 +17,8 @@
 
 
 #pragma once
+#ifndef MONGO_SHELL_SHELL_UTILS_LAUNCHER_H
+#define MONGO_SHELL_SHELL_UTILS_LAUNCHER_H
 
 #include <boost/filesystem/convenience.hpp>
 #include <boost/thread/recursive_mutex.hpp>
@@ -115,3 +117,5 @@ namespace mongo {
         };
     }
 }
+
+#endif /* MONGO_SHELL_SHELL_UTILS_LAUNCHER_H */

@@ -18,6 +18,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DBTESTS_DBTESTS_H
+#define MONGO_DBTESTS_DBTESTS_H
 
 #include "mongo/db/instance.h"
 #include "mongo/unittest/unittest.h"
@@ -26,3 +28,5 @@ using namespace mongo;
 using namespace mongo::unittest;
 using boost::shared_ptr;
 
+
+#endif /* MONGO_DBTESTS_DBTESTS_H */

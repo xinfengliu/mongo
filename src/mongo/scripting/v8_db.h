@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_SCRIPTING_V__DB_H
+#define MONGO_SCRIPTING_V__DB_H
 
 #include <v8.h>
 #include <cstring>
@@ -92,3 +94,5 @@ namespace mongo {
 
 }
 
+
+#endif /* MONGO_SCRIPTING_V__DB_H */

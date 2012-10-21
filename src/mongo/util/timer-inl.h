@@ -34,7 +34,7 @@
 // On Windows, prefer the Windows-specific implementation, which employs QueryPerformanceCounter.
 #include "mongo/util/timer-win32-inl.h"
 
-#elif defined(_POSIX_TIMERS) and _POSIX_TIMERS > 0 and defined(_POSIX_MONOTONIC_CLOCK) and _POSIX_MONOTONIC_CLOCK > 0
+#elif defined(_POSIX_TIMERS) && _POSIX_TIMERS > 0 && defined(_POSIX_MONOTONIC_CLOCK) && _POSIX_MONOTONIC_CLOCK > 0
 
 // On systems that support the POSIX clock_gettime function, and the "monotonic" clock,
 // use those.

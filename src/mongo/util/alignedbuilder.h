@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_UTIL_ALIGNEDBUILDER_H
+#define MONGO_UTIL_ALIGNEDBUILDER_H
 
 #include "../bson/stringdata.h"
 
@@ -123,3 +125,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_ALIGNEDBUILDER_H */

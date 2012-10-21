@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_CONNPOOL_H
+#define MONGO_CLIENT_CONNPOOL_H
 
 #include <stack>
 
@@ -302,3 +304,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_CLIENT_CONNPOOL_H */

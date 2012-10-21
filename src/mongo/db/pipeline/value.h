@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_PIPELINE_VALUE_H
+#define MONGO_DB_PIPELINE_VALUE_H
 
 #include "mongo/pch.h"
 #include "bson/bsontypes.h"
@@ -478,3 +480,5 @@ namespace mongo {
     }
 
 };
+
+#endif /* MONGO_DB_PIPELINE_VALUE_H */

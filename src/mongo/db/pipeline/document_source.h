@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_PIPELINE_DOCUMENT_SOURCE_H
+#define MONGO_DB_PIPELINE_DOCUMENT_SOURCE_H
 
 #include "mongo/pch.h"
 
@@ -1155,3 +1157,5 @@ namespace mongo {
         pIdExpression = pExpression;
     }
 }
+
+#endif /* MONGO_DB_PIPELINE_DOCUMENT_SOURCE_H */

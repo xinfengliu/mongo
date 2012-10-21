@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_BSONOBJ_H
+#define MONGO_BSON_BSONOBJ_H
 
 #include <boost/intrusive_ptr.hpp>
 #include <boost/noncopyable.hpp>
@@ -528,3 +530,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_BSON_BSONOBJ_H */

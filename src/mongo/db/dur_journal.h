@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_DUR_JOURNAL_H
+#define MONGO_DB_DUR_JOURNAL_H
 
 namespace mongo {
     class AlignedBuilder;
@@ -69,3 +71,5 @@ namespace mongo {
 
     }
 }
+
+#endif /* MONGO_DB_DUR_JOURNAL_H */

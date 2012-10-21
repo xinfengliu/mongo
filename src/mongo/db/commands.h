@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_COMMANDS_H
+#define MONGO_DB_COMMANDS_H
 
 #include "jsobj.h"
 #include "../util/mongoutils/str.h"
@@ -169,3 +171,5 @@ namespace mongo {
     bool _runCommands(const char *ns, BSONObj& jsobj, BufBuilder &b, BSONObjBuilder& anObjBuilder, bool fromRepl, int queryOptions);
 
 } // namespace mongo
+
+#endif /* MONGO_DB_COMMANDS_H */

@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_AUTHENTICATION_TABLE_H
+#define MONGO_CLIENT_AUTHENTICATION_TABLE_H
 
 #include <string>
 
@@ -64,3 +66,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_CLIENT_AUTHENTICATION_TABLE_H */

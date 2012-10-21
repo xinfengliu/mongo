@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_DBCLIENT_RS_H
+#define MONGO_CLIENT_DBCLIENT_RS_H
 
 #include "mongo/pch.h"
 
@@ -645,3 +647,5 @@ namespace mongo {
         BSONArrayIteratorSorted _tagIterator;
     };
 }
+
+#endif /* MONGO_CLIENT_DBCLIENT_RS_H */

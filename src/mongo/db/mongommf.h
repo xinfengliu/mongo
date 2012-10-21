@@ -16,6 +16,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_MONGOMMF_H
+#define MONGO_DB_MONGOMMF_H
 
 #include "../util/mmap.h"
 #include "../util/paths.h"
@@ -144,3 +146,5 @@ namespace mongo {
     // allows a pointer into any private view of a MongoMMF to be resolved to the MongoMMF object
     extern PointerToMMF privateViews;
 }
+
+#endif /* MONGO_DB_MONGOMMF_H */

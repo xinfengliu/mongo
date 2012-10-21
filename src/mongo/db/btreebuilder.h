@@ -1,4 +1,6 @@
 #pragma once
+#ifndef MONGO_DB_BTREEBUILDER_H
+#define MONGO_DB_BTREEBUILDER_H
 
 #include "btree.h"
 
@@ -51,3 +53,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_BTREEBUILDER_H */

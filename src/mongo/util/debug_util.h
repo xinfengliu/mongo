@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_DEBUG_UTIL_H
+#define MONGO_UTIL_DEBUG_UTIL_H
 
 
 namespace mongo {
@@ -64,3 +66,5 @@ namespace mongo {
         mongo_breakpoint();
     }
 } // namespace mongo
+
+#endif /* MONGO_UTIL_DEBUG_UTIL_H */

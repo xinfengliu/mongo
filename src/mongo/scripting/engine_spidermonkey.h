@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_SCRIPTING_ENGINE_SPIDERMONKEY_H
+#define MONGO_SCRIPTING_ENGINE_SPIDERMONKEY_H
 
 #include "mongo/scripting/engine.h"
 
@@ -99,3 +101,5 @@ namespace mongo {
         bool iFree_;
     };
 }
+
+#endif /* MONGO_SCRIPTING_ENGINE_SPIDERMONKEY_H */

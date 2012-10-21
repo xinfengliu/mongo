@@ -27,7 +27,7 @@ using namespace std;
 # include <io.h>
 # include <fcntl.h>
 # include "mongo/util/text.h"
-#else
+#elif !defined(__SUNPRO_CC)
 # include <cxxabi.h>
 # include <sys/file.h>
 #endif

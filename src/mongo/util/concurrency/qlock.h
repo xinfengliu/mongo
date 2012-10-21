@@ -1,6 +1,8 @@
 // @file qlock.h
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_QLOCK_H
+#define MONGO_UTIL_CONCURRENCY_QLOCK_H
 
 #include <boost/noncopyable.hpp>
 #include <boost/thread/mutex.hpp>
@@ -346,3 +348,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_QLOCK_H */

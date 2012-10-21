@@ -16,9 +16,15 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_STRINGDATA_H
+#define MONGO_BSON_STRINGDATA_H
 
 #include <cstring>
 #include <string>
+
+#ifdef __SUNPRO_CC
+#include <strings.h>
+#endif
 
 namespace mongo {
 
@@ -73,3 +79,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_BSON_STRINGDATA_H */

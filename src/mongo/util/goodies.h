@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_GOODIES_H
+#define MONGO_UTIL_GOODIES_H
 
 #include <boost/detail/endian.hpp>
 #include <boost/thread/condition_variable.hpp>
@@ -226,3 +228,5 @@ namespace mongo {
     using boost::intrusive_ptr;
     using boost::dynamic_pointer_cast;
 } // namespace mongo
+
+#endif /* MONGO_UTIL_GOODIES_H */

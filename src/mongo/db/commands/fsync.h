@@ -14,9 +14,13 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_COMMANDS_FSYNC_H
+#define MONGO_DB_COMMANDS_FSYNC_H
 
 namespace mongo {
     // Use this for blocking during an fsync-and-lock
     extern SimpleMutex filesLockedFsync;
     bool lockedForWriting();
 }
+
+#endif /* MONGO_DB_COMMANDS_FSYNC_H */

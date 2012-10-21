@@ -15,6 +15,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_REPLUTIL_H
+#define MONGO_DB_REPLUTIL_H
 
 #include "db.h"
 #include "dbhelpers.h"
@@ -87,3 +89,5 @@ namespace mongo {
     void replVerifyReadsOk(const ParsedQuery* pq = 0);
 
 } // namespace mongo
+
+#endif /* MONGO_DB_REPLUTIL_H */

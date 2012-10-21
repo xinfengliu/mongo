@@ -1,6 +1,8 @@
 /** @file oplogreader.h */
 
 #pragma once
+#ifndef MONGO_DB_OPLOGREADER_H
+#define MONGO_DB_OPLOGREADER_H
 
 #include "../client/constants.h"
 #include "dbhelpers.h"
@@ -112,3 +114,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_OPLOGREADER_H */

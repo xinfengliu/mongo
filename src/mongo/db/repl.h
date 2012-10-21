@@ -26,6 +26,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_REPL_H
+#define MONGO_DB_REPL_H
 
 #include "pdfile.h"
 #include "db.h"
@@ -196,3 +198,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_REPL_H */

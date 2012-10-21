@@ -1,6 +1,8 @@
 // @file mutexdebugger.h
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_MUTEXDEBUGGER_H
+#define MONGO_UTIL_CONCURRENCY_MUTEXDEBUGGER_H
 
 #include "mongo/client/undef_macros.h"
 
@@ -131,3 +133,5 @@ namespace mongo {
     extern MutexDebugger &mutexDebugger;
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_MUTEXDEBUGGER_H */

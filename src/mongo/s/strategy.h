@@ -17,6 +17,8 @@
 
 
 #pragma once
+#ifndef MONGO_S_STRATEGY_H
+#define MONGO_S_STRATEGY_H
 
 #include "mongo/pch.h"
 #include "chunk.h"
@@ -62,3 +64,5 @@ namespace mongo {
 
 }
 
+
+#endif /* MONGO_S_STRATEGY_H */

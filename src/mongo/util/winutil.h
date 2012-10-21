@@ -19,6 +19,8 @@
 // #include "pch.h"
 
 #pragma once
+#ifndef MONGO_UTIL_WINUTIL_H
+#define MONGO_UTIL_WINUTIL_H
 
 #if defined(_WIN32)
 #include <windows.h>
@@ -42,3 +44,5 @@ namespace mongo {
 
 #endif
 
+
+#endif /* MONGO_UTIL_WINUTIL_H */

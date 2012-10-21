@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_REPL_MULTICMD_H
+#define MONGO_DB_REPL_MULTICMD_H
 
 #include "../../util/background.h"
 #include "connections.h"
@@ -73,3 +75,5 @@ namespace mongo {
         }
     }
 }
+
+#endif /* MONGO_DB_REPL_MULTICMD_H */

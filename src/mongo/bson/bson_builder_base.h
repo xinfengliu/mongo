@@ -14,6 +14,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_BSON_BUILDER_BASE_H
+#define MONGO_BSON_BSON_BUILDER_BASE_H
 
 #include "mongo/bson/stringdata.h"
 #include "mongo/bson/util/builder.h"
@@ -56,3 +58,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_BSON_BSON_BUILDER_BASE_H */

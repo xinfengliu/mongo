@@ -32,6 +32,8 @@
  *
  */
 #pragma once
+#ifndef MONGO_SCRIPTING_BSON_TEMPLATE_EVALUATOR_H
+#define MONGO_SCRIPTING_BSON_TEMPLATE_EVALUATOR_H
 
 #include <map>
 #include <string>
@@ -150,3 +152,5 @@ namespace mongo {
     };
 
 } // end namespace
+
+#endif /* MONGO_SCRIPTING_BSON_TEMPLATE_EVALUATOR_H */

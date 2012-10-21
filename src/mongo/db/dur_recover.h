@@ -1,6 +1,8 @@
 // @file dur.h durability support
 
 #pragma once
+#ifndef MONGO_DB_DUR_RECOVER_H
+#define MONGO_DB_DUR_RECOVER_H
 
 #include "dur_journalformat.h"
 #include "../util/concurrency/mutex.h"
@@ -48,3 +50,5 @@ namespace mongo {
         };
     }
 }
+
+#endif /* MONGO_DB_DUR_RECOVER_H */

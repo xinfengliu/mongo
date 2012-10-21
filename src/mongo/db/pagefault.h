@@ -1,6 +1,8 @@
 // @file pagefault.h
 
 #pragma once
+#ifndef MONGO_DB_PAGEFAULT_H
+#define MONGO_DB_PAGEFAULT_H
 
 namespace mongo {
 
@@ -57,3 +59,5 @@ namespace mongo {
     }
 #endif
 }
+
+#endif /* MONGO_DB_PAGEFAULT_H */

@@ -19,6 +19,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_BSON_INL_H
+#define MONGO_BSON_BSON_INL_H
 
 #include <map>
 #include <limits>
@@ -821,7 +823,11 @@ dodouble:
            to be little endian external to the system. (i.e. the rest of the implementation of bson,
            not this part, fails to support big endian)
         */
+#ifdef __sparc
+        static char p[] = { 0, 0, 0, 5, 0 };
+#else
         static char p[] = { /*size*/5, 0, 0, 0, /*eoo*/0 };
+#endif
         _objdata = p;
     }
 
@@ -998,3 +1004,5 @@ dodouble:
         return b.obj();
     }
 }
+
+#endif /* MONGO_BSON_BSON_INL_H */

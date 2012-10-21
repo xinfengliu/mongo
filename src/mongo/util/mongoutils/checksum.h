@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_MONGOUTILS_CHECKSUM_H
+#define MONGO_UTIL_MONGOUTILS_CHECKSUM_H
 
 namespace mongoutils {
 
@@ -30,3 +32,5 @@ namespace mongoutils {
     }
 
 }
+
+#endif /* MONGO_UTIL_MONGOUTILS_CHECKSUM_H */

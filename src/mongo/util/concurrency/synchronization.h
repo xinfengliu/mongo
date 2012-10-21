@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_SYNCHRONIZATION_H
+#define MONGO_UTIL_CONCURRENCY_SYNCHRONIZATION_H
 
 #include <boost/thread/condition.hpp>
 #include "mutex.h"
@@ -83,3 +85,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_CONCURRENCY_SYNCHRONIZATION_H */

@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_BSONTYPES_H
+#define MONGO_BSON_BSONTYPES_H
 
 namespace bson { }
 
@@ -107,3 +109,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_BSON_BSONTYPES_H */

@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_PLATFORM_COMPILER_GCC_H
+#define MONGO_PLATFORM_COMPILER_GCC_H
 
 /**
  * Compiler-specific implementations for gcc.
@@ -69,3 +71,5 @@
  *    int MONGO_COMPILER_ALIGN_VARIABLE(16) a, b;
  */
 #define MONGO_COMPILER_ALIGN_VARIABLE(ALIGNMENT) __attribute__(( __aligned__(ALIGNMENT) ))
+
+#endif /* MONGO_PLATFORM_COMPILER_GCC_H */

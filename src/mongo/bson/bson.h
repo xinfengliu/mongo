@@ -32,6 +32,8 @@
 */
 
 #pragma once
+#ifndef MONGO_BSON_BSON_H
+#define MONGO_BSON_BSON_H
 
 #if defined(MONGO_EXPOSE_MACROS)
 #error this header is for client programs, not the mongo database itself. include jsobj.h instead.
@@ -111,3 +113,5 @@ namespace mongo {
 #include "mongo/bson/bson-inl.h"
 #include "mongo/bson/oid.h"
 #include "mongo/bson/util/builder.h"
+
+#endif /* MONGO_BSON_BSON_H */

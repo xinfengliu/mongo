@@ -19,6 +19,8 @@
  */
 
 #pragma once
+#ifndef MONGO_PLATFORM_ATOMIC_INTRINSICS_GCC_H
+#define MONGO_PLATFORM_ATOMIC_INTRINSICS_GCC_H
 
 #include <boost/utility.hpp>
 
@@ -160,3 +162,5 @@ namespace mongo {
     };
 
 }  // namespace mongo
+
+#endif /* MONGO_PLATFORM_ATOMIC_INTRINSICS_GCC_H */

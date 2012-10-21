@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_TASK_H
+#define MONGO_UTIL_CONCURRENCY_TASK_H
 
 #include "../background.h"
 
@@ -71,3 +73,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_TASK_H */

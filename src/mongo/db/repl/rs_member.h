@@ -18,6 +18,8 @@
 /** replica set member */
 
 #pragma once
+#ifndef MONGO_DB_REPL_RS_MEMBER_H
+#define MONGO_DB_REPL_RS_MEMBER_H
 
 #include "../../util/concurrency/value.h"
 
@@ -132,3 +134,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_DB_REPL_RS_MEMBER_H */

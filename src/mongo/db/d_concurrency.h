@@ -21,6 +21,8 @@
 // (also used by dbtests test binary, which is running mongod test code)
 
 #pragma once
+#ifndef MONGO_DB_D_CONCURRENCY_H
+#define MONGO_DB_D_CONCURRENCY_H
 
 #include "mongo/bson/stringdata.h"
 #include "mongo/db/jsobj.h"
@@ -248,3 +250,5 @@ namespace mongo {
 
 
 }
+
+#endif /* MONGO_DB_D_CONCURRENCY_H */

@@ -1,4 +1,6 @@
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_THREADLOCAL_H
+#define MONGO_UTIL_CONCURRENCY_THREADLOCAL_H
 
 /**
 *    Copyright (C) 2011 10gen Inc.
@@ -182,3 +184,5 @@ namespace mongo {
 #endif
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_THREADLOCAL_H */

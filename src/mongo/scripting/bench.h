@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_SCRIPTING_BENCH_H
+#define MONGO_SCRIPTING_BENCH_H
 
 #include <string>
 
@@ -410,3 +412,5 @@ namespace mongo {
     };
 
 }  // namespace mongo
+
+#endif /* MONGO_SCRIPTING_BENCH_H */

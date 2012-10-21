@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_DBMESSAGE_H
+#define MONGO_DB_DBMESSAGE_H
 
 #include "jsobj.h"
 #include "namespace-inl.h"
@@ -281,3 +283,5 @@ namespace mongo {
      */
     void replyToQuery( int queryResultFlags, Message& response, const BSONObj& resultObj );
 } // namespace mongo
+
+#endif /* MONGO_DB_DBMESSAGE_H */

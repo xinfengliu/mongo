@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_PROGRESS_METER_H
+#define MONGO_UTIL_PROGRESS_METER_H
 
 #include <boost/noncopyable.hpp>
 
@@ -106,3 +108,5 @@ namespace mongo {
 
 
 }
+
+#endif /* MONGO_UTIL_PROGRESS_METER_H */

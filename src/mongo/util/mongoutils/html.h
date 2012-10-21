@@ -1,6 +1,8 @@
 // @file html.h
 
 #pragma once
+#ifndef MONGO_UTIL_MONGOUTILS_HTML_H
+#define MONGO_UTIL_MONGOUTILS_HTML_H
 
 /* Things in the mongoutils namespace
    (1) are not database specific, rather, true utilities
@@ -185,3 +187,5 @@ namespace mongoutils {
     }
 
 }
+
+#endif /* MONGO_UTIL_MONGOUTILS_HTML_H */

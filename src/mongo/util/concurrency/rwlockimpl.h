@@ -1,6 +1,8 @@
 // @file rwlockimpl.h
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_RWLOCKIMPL_H
+#define MONGO_UTIL_CONCURRENCY_RWLOCKIMPL_H
 
 #include "mutex.h"
 
@@ -176,3 +178,5 @@ namespace mongo {
 }
 
 #endif
+
+#endif /* MONGO_UTIL_CONCURRENCY_RWLOCKIMPL_H */

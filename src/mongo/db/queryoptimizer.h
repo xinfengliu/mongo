@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_QUERYOPTIMIZER_H
+#define MONGO_DB_QUERYOPTIMIZER_H
 
 #include "cursor.h"
 #include "queryutil.h"
@@ -727,3 +729,5 @@ namespace mongo {
     };
     
 } // namespace mongo
+
+#endif /* MONGO_DB_QUERYOPTIMIZER_H */

@@ -23,6 +23,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_CLIENTCURSOR_H
+#define MONGO_DB_CLIENTCURSOR_H
 
 #include "mongo/pch.h"
 
@@ -447,3 +449,5 @@ namespace boost{
     template<> class scoped_ptr<mongo::ClientCursor> {};
     template<> class shared_ptr<mongo::ClientCursor> {};
 }
+
+#endif /* MONGO_DB_CLIENTCURSOR_H */

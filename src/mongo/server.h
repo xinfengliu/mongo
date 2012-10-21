@@ -7,6 +7,8 @@
 */
 
 #pragma once
+#ifndef MONGO_SERVER_H
+#define MONGO_SERVER_H
 
 #if !defined(MONGO_EXPOSE_MACROS)
 # error this file is for mongo server programs not client lib
@@ -37,3 +39,5 @@
 
 // log but not too fast.  this is rather simplistic we can do something fancier later
 #define LOGSOME LOGATMOST(20)
+
+#endif /* MONGO_SERVER_H */

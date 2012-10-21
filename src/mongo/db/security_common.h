@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_SECURITY_COMMON_H
+#define MONGO_DB_SECURITY_COMMON_H
 
 #include "commands.h"
 #include "../util/concurrency/spin_lock.h"
@@ -82,3 +84,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_SECURITY_COMMON_H */

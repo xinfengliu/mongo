@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_INDEXKEY_H
+#define MONGO_DB_INDEXKEY_H
 
 #include "mongo/pch.h"
 #include "diskloc.h"
@@ -198,3 +200,5 @@ namespace mongo {
 
 
 } // namespace mongo
+
+#endif /* MONGO_DB_INDEXKEY_H */

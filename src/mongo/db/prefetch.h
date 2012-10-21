@@ -14,6 +14,8 @@
 *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #pragma once
+#ifndef MONGO_DB_PREFETCH_H
+#define MONGO_DB_PREFETCH_H
 
 #include "mongo/db/jsobj.h"
 #include "mongo/db/diskloc.h"
@@ -29,3 +31,5 @@ namespace mongo {
     // page in the data pages for a record associated with an object
     void prefetchRecordPages(const char *ns, const BSONObj& obj);
 }
+
+#endif /* MONGO_DB_PREFETCH_H */

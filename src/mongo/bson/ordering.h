@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_ORDERING_H
+#define MONGO_BSON_ORDERING_H
 
 namespace mongo {
 
@@ -71,3 +73,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_BSON_ORDERING_H */

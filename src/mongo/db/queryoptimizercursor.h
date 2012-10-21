@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_QUERYOPTIMIZERCURSOR_H
+#define MONGO_DB_QUERYOPTIMIZERCURSOR_H
 
 #include "cursor.h"
 #include "diskloc.h"
@@ -125,3 +127,5 @@ namespace mongo {
     };
     
 } // namespace mongo
+
+#endif /* MONGO_DB_QUERYOPTIMIZERCURSOR_H */

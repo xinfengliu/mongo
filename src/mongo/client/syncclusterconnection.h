@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_CLIENT_SYNCCLUSTERCONNECTION_H
+#define MONGO_CLIENT_SYNCCLUSTERCONNECTION_H
 
 
 #include "mongo/bson/bsonelement.h"
@@ -152,3 +154,5 @@ namespace mongo {
     };
 
 };
+
+#endif /* MONGO_CLIENT_SYNCCLUSTERCONNECTION_H */

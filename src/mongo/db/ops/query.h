@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_OPS_QUERY_H
+#define MONGO_DB_OPS_QUERY_H
 
 #include "mongo/pch.h"
 #include "../../util/net/message.h"
@@ -295,3 +297,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_OPS_QUERY_H */

@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_STATS_SNAPSHOTS_H
+#define MONGO_DB_STATS_SNAPSHOTS_H
 #include "mongo/pch.h"
 #include "../jsobj.h"
 #include "top.h"
@@ -112,3 +114,5 @@ namespace mongo {
 
 
 }
+
+#endif /* MONGO_DB_STATS_SNAPSHOTS_H */

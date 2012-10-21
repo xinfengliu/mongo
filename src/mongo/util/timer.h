@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_TIMER_H
+#define MONGO_UTIL_TIMER_H
 
 namespace mongo {
 
@@ -78,3 +80,5 @@ namespace mongo {
 }  // namespace mongo
 
 #include "mongo/util/timer-inl.h"
+
+#endif /* MONGO_UTIL_TIMER_H */

@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_CLONER_H
+#define MONGO_DB_CLONER_H
 
 #include "jsobj.h"
 
@@ -71,3 +73,5 @@ namespace mongo {
     bool copyCollectionFromRemote(const string& host, const string& ns, string& errmsg);
 
 } // namespace mongo
+
+#endif /* MONGO_DB_CLONER_H */

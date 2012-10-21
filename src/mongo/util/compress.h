@@ -1,6 +1,8 @@
 // @file compress.h
 
 #pragma once
+#ifndef MONGO_UTIL_COMPRESS_H
+#define MONGO_UTIL_COMPRESS_H
 
 #include <string>
 
@@ -19,3 +21,5 @@ namespace mongo {
 }
 
 
+
+#endif /* MONGO_UTIL_COMPRESS_H */

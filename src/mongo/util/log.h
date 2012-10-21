@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_LOG_H
+#define MONGO_UTIL_LOG_H
 
 #include <string.h>
 #include <sstream>
@@ -454,3 +456,5 @@ namespace mongo {
     void logContext(const char *msg = NULL);
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_LOG_H */

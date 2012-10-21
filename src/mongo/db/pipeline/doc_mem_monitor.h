@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_PIPELINE_DOC_MEM_MONITOR_H
+#define MONGO_DB_PIPELINE_DOC_MEM_MONITOR_H
 
 #include "mongo/pch.h"
 #include "util/string_writer.h"
@@ -92,3 +94,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_PIPELINE_DOC_MEM_MONITOR_H */

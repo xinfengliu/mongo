@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_MMAP_H
+#define MONGO_UTIL_MMAP_H
 #include <boost/thread/xtime.hpp>
 #include "concurrency/rwlock.h"
 
@@ -281,3 +283,5 @@ namespace mongo {
 #endif
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_MMAP_H */

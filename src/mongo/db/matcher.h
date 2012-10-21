@@ -19,6 +19,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_MATCHER_H
+#define MONGO_DB_MATCHER_H
 
 #include "jsobj.h"
 #include "pcrecpp.h"
@@ -321,3 +323,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_MATCHER_H */

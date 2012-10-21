@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_REPL_RS_OPTIME_H
+#define MONGO_DB_REPL_RS_OPTIME_H
 
 #include "../../util/optime.h"
 
@@ -25,3 +27,5 @@ namespace mongo {
     const char rsoplog[] = "local.oplog.rs";
 
 }
+
+#endif /* MONGO_DB_REPL_RS_OPTIME_H */

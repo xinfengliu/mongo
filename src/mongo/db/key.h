@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_KEY_H
+#define MONGO_DB_KEY_H
  
 #include "jsobj.h"
 
@@ -116,3 +118,5 @@ namespace mongo {
     };
 
 };
+
+#endif /* MONGO_DB_KEY_H */

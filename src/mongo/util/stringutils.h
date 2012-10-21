@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_STRINGUTILS_H
+#define MONGO_UTIL_STRINGUTILS_H
 
 #include <string>
 #include <vector>
@@ -65,3 +67,5 @@ namespace mongo {
     };
     
 } // namespace mongo
+
+#endif /* MONGO_UTIL_STRINGUTILS_H */

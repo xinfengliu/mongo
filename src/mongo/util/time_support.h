@@ -16,13 +16,20 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_TIME_SUPPORT_H
+#define MONGO_UTIL_TIME_SUPPORT_H
+
+/*otherwise,  std::MONGO_malloc in stdlib.h would error -lxf*/
+#include "mongo/client/undef_macros.h"
 
 #include <ctime>
 #include <string>
 #include <boost/thread/xtime.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 
+#include "mongo/client/redef_macros.h" //must before bson/util/misc.h -lxf
 #include "mongo/bson/util/misc.h"  // Date_t
+
 
 namespace mongo {
 
@@ -93,3 +100,5 @@ namespace mongo {
 #endif
 
 }  // namespace mongo
+
+#endif /* MONGO_UTIL_TIME_SUPPORT_H */

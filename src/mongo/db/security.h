@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_SECURITY_H
+#define MONGO_DB_SECURITY_H
 
 #include <string>
 
@@ -140,3 +142,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_SECURITY_H */

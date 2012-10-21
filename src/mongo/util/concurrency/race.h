@@ -1,4 +1,6 @@
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_RACE_H
+#define MONGO_UTIL_CONCURRENCY_RACE_H
 
 #include "../goodies.h" // printStackTrace
 #include "mutexdebugger.h"
@@ -76,3 +78,5 @@ namespace mongo {
 
     }
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_RACE_H */

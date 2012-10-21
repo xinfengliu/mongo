@@ -15,6 +15,10 @@
 */
 
 #pragma once
+#ifndef MONGO_TARGETVER_H
+#define MONGO_TARGETVER_H
 #ifndef _WIN32_WINNT            // Allow use of features specific to Windows Vista or later.
 #define _WIN32_WINNT 0x0600     // Change this to the appropriate value to target other versions of Windows.
 #endif
+
+#endif /* MONGO_TARGETVER_H */

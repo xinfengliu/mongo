@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_STARTUP_TEST_H
+#define MONGO_UTIL_STARTUP_TEST_H
 
 #include <vector>
 
@@ -54,3 +56,5 @@ namespace mongo {
 
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_STARTUP_TEST_H */

@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_FILE_H
+#define MONGO_UTIL_FILE_H
 
 #if !defined(_WIN32)
 #include "errno.h"
@@ -228,3 +230,5 @@ namespace mongo {
 
 }
 
+
+#endif /* MONGO_UTIL_FILE_H */

@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_NAMESPACESTRING_H
+#define MONGO_DB_NAMESPACESTRING_H
 
 #include <string>
 
@@ -161,3 +163,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_DB_NAMESPACESTRING_H */

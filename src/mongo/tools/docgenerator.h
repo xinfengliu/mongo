@@ -21,6 +21,8 @@
 */
 
 #pragma once
+#ifndef MONGO_TOOLS_DOCGENERATOR_H
+#define MONGO_TOOLS_DOCGENERATOR_H
 
 #include <string>
 #include <vector>
@@ -78,3 +80,5 @@ namespace mongo {
 
 
 
+
+#endif /* MONGO_TOOLS_DOCGENERATOR_H */

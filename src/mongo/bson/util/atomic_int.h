@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_UTIL_ATOMIC_INT_H
+#define MONGO_BSON_UTIL_ATOMIC_INT_H
 
 #if defined(_WIN32)
 #include "mongo/platform/windows_basic.h"
@@ -124,8 +126,38 @@ namespace mongo {
     void AtomicUInt::signedAdd(int by) {
         atomic_int_helper(&x, by);
     }
+#elif defined(__SUNPRO_CC) //&& defined(__sparc)
+#include <atomic.h>
+#include <mbarrier.h>  /* since Solaris Studio 12.2 */
+    inline void AtomicUInt::set(unsigned newX) {
+	//asm volatile ("membar #StoreLoad");
+        x = newX;
+	__machine_rw_barrier(); 
+    }
+    inline AtomicUInt AtomicUInt::operator++() {
+	return atomic_inc_32_nv(&x);
+    }
+    inline AtomicUInt AtomicUInt::operator++(int) {
+	unsigned old = x;
+	atomic_inc_32(&x);
+	return old;
+    }
+    inline AtomicUInt AtomicUInt::operator--() {
+	return atomic_dec_32_nv(&x);
+    }
+    inline AtomicUInt AtomicUInt::operator--(int) {
+	unsigned old = x;
+	atomic_dec_32(&x);
+	return old;
+    }
+    inline void AtomicUInt::signedAdd(int by) {
+    	atomic_add_32(&x, by);
+    }
+   
 #else
 #  error "unsupported compiler or platform"
 #endif
 
 } // namespace mongo
+
+#endif /* MONGO_BSON_UTIL_ATOMIC_INT_H */

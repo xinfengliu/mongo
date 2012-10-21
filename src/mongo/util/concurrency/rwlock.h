@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_RWLOCK_H
+#define MONGO_UTIL_CONCURRENCY_RWLOCK_H
 
 #include "mutex.h"
 #include "../time_support.h"
@@ -246,3 +248,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_RWLOCK_H */

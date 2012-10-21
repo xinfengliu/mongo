@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_ASSERT_UTIL_H
+#define MONGO_UTIL_ASSERT_UTIL_H
 
 #include <iostream>
 #include <typeinfo>
@@ -261,3 +263,4 @@ namespace mongo {
         problem() << "caught unknown exception in destructor (" << __FUNCTION__ << ")" << endl; \
     }
 
+#endif /* MONGO_UTIL_ASSERT_UTIL_H */

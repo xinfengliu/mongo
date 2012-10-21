@@ -17,7 +17,11 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_TTL_H
+#define MONGO_DB_TTL_H
 
 namespace mongo {
     void startTTLBackgroundJob();
 }
+
+#endif /* MONGO_DB_TTL_H */

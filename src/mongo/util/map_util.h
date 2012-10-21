@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_MAP_UTIL_H
+#define MONGO_UTIL_MAP_UTIL_H
 
 #include <map>
 
@@ -33,3 +35,5 @@ V mapFindWithDefault(const map<K,V>& myMap, const K& key, const V& defaultValue)
 }
 
 } // end namespace
+
+#endif /* MONGO_UTIL_MAP_UTIL_H */

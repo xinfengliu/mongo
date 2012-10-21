@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_THREAD_POOL_H
+#define MONGO_UTIL_CONCURRENCY_THREAD_POOL_H
 
 #include <list>
 
@@ -81,3 +83,5 @@ namespace mongo {
     using threadpool::ThreadPool;
 
 } //namespace mongo
+
+#endif /* MONGO_UTIL_CONCURRENCY_THREAD_POOL_H */

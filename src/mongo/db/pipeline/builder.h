@@ -15,6 +15,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_PIPELINE_BUILDER_H
+#define MONGO_DB_PIPELINE_BUILDER_H
 
 #include "mongo/pch.h"
 
@@ -99,3 +101,5 @@ namespace mongo {
         BSONArrayBuilder *pBuilder;
     };
 }
+
+#endif /* MONGO_DB_PIPELINE_BUILDER_H */

@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_BSON_UTIL_H
+#define MONGO_UTIL_BSON_UTIL_H
 
 #include "mongo/pch.h"
 
@@ -40,3 +42,5 @@ void bsonArrToNumVector(BSONElement el, vector<T>& results){
 
 
 }
+
+#endif /* MONGO_UTIL_BSON_UTIL_H */

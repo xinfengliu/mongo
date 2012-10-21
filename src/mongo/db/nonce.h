@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_NONCE_H
+#define MONGO_DB_NONCE_H
 
 #include <iostream>
 
@@ -36,3 +38,5 @@ namespace mongo {
     };
 
 } // namespace mongo
+
+#endif /* MONGO_DB_NONCE_H */

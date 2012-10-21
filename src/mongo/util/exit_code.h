@@ -19,6 +19,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_EXIT_CODE_H
+#define MONGO_UTIL_EXIT_CODE_H
 
 namespace mongo {
 
@@ -44,3 +46,5 @@ namespace mongo {
     };
 
 }  // namespace mongo
+
+#endif /* MONGO_UTIL_EXIT_CODE_H */

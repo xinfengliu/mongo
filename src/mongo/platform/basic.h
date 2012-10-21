@@ -1,6 +1,8 @@
 // basic.h
 
 #pragma once
+#ifndef MONGO_PLATFORM_BASIC_H
+#define MONGO_PLATFORM_BASIC_H
 
 #ifdef _WIN32
 #include "windows_basic.h"
@@ -20,3 +22,5 @@
 # define __builtin_memmove memmove
 #endif
 
+
+#endif /* MONGO_PLATFORM_BASIC_H */

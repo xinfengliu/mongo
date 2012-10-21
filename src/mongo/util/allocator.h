@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_ALLOCATOR_H
+#define MONGO_UTIL_ALLOCATOR_H
 
 #include "mongo/util/signal_handlers.h"
 
@@ -43,3 +45,5 @@ namespace mongo {
 #include "mongo/client/redef_macros.h"
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_ALLOCATOR_H */

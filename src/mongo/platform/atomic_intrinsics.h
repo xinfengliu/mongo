@@ -39,11 +39,17 @@
  */
 
 #pragma once
+#ifndef MONGO_PLATFORM_ATOMIC_INTRINSICS_H
+#define MONGO_PLATFORM_ATOMIC_INTRINSICS_H
 
 #if defined(_WIN32)
 #include "mongo/platform/atomic_intrinsics_win32.h"
 #elif defined(__GNUC__)
 #include "mongo/platform/atomic_intrinsics_gcc.h"
+#elif defined(__SUNPRO_CC)
+#include "mongo/platform/atomic_intrinsics_suncc.h"
 #else
 #error "Unsupported os/compiler family"
 #endif
+
+#endif /* MONGO_PLATFORM_ATOMIC_INTRINSICS_H */

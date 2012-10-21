@@ -1,4 +1,6 @@
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_MAPSF_H
+#define MONGO_UTIL_CONCURRENCY_MAPSF_H
 
 namespace mongo {
 
@@ -57,3 +59,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_MAPSF_H */

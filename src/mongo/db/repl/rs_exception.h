@@ -1,6 +1,8 @@
 // @file rs_exception.h
 
 #pragma once
+#ifndef MONGO_DB_REPL_RS_EXCEPTION_H
+#define MONGO_DB_REPL_RS_EXCEPTION_H
 
 namespace mongo {
 
@@ -15,3 +17,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_REPL_RS_EXCEPTION_H */

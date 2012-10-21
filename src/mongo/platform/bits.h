@@ -16,10 +16,12 @@
  */
 
 #pragma once
+#ifndef MONGO_PLATFORM_BITS_H
+#define MONGO_PLATFORM_BITS_H
 
 // figure out if we're on a 64 or 32 bit system
 
-#if defined(__x86_64__) || defined(__amd64__) || defined(_WIN64)
+#if defined(__x86_64__) || defined(__amd64__) || defined(_WIN64) || defined(__LP64__)
 #define MONGO_PLATFORM_64
 #elif defined(__i386__) || defined(_WIN32)
 #define MONGO_PLATFORM_32
@@ -27,3 +29,5 @@
 #error "unknown platform"
 #endif
 
+
+#endif /* MONGO_PLATFORM_BITS_H */

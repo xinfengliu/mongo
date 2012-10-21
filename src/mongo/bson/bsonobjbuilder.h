@@ -21,6 +21,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_BSONOBJBUILDER_H
+#define MONGO_BSON_BSONOBJBUILDER_H
 
 #include <boost/static_assert.hpp>
 #include <cmath>
@@ -904,3 +906,5 @@ namespace mongo {
     { return BSON( "$or" << BSON_ARRAY(a << b << c << d << e << f) ); }
 
 }
+
+#endif /* MONGO_BSON_BSONOBJBUILDER_H */

@@ -21,6 +21,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_DISKLOC_H
+#define MONGO_DB_DISKLOC_H
 
 #include "jsobj.h"
 
@@ -158,3 +160,5 @@ namespace mongo {
     const DiskLoc maxDiskLoc(0x7fffffff, 0x7fffffff);
 
 } // namespace mongo
+
+#endif /* MONGO_DB_DISKLOC_H */

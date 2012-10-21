@@ -24,6 +24,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_PDFILE_H
+#define MONGO_DB_PDFILE_H
 
 #include "mongo/db/client.h"
 #include "mongo/db/diskloc.h"
@@ -616,3 +618,5 @@ namespace mongo {
     }
     
 } // namespace mongo
+
+#endif /* MONGO_DB_PDFILE_H */

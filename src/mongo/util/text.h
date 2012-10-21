@@ -31,6 +31,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_TEXT_H
+#define MONGO_UTIL_TEXT_H
 
 #include <vector>
 #include <string>
@@ -104,3 +106,5 @@ namespace mongo {
 #endif // #if defined(_WIN32)
 
 } // namespace mongo
+
+#endif /* MONGO_UTIL_TEXT_H */

@@ -14,6 +14,8 @@
  */
 
 #pragma once
+#ifndef MONGO_PLATFORM_ATOMIC_WORD_H
+#define MONGO_PLATFORM_ATOMIC_WORD_H
 
 #include <boost/static_assert.hpp>
 
@@ -150,3 +152,5 @@ namespace mongo {
 #undef _ATOMIC_WORD_DECLARE
 
 }  // namespace mongo
+
+#endif /* MONGO_PLATFORM_ATOMIC_WORD_H */

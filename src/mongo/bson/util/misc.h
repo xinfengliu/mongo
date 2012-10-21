@@ -18,6 +18,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_UTIL_MISC_H
+#define MONGO_BSON_UTIL_MISC_H
 
 #include <ctime>
 #include <limits>
@@ -127,3 +129,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_BSON_UTIL_MISC_H */

@@ -14,6 +14,8 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#ifndef MONGO_DB_INDEX_INSERTION_CONTINUATION_H
+#define MONGO_DB_INDEX_INSERTION_CONTINUATION_H
 
 #include "mongo/db/diskloc.h"
 #include "mongo/db/jsobj.h"
@@ -68,3 +70,5 @@ namespace mongo {
 
 
 }  // namespace mongo
+
+#endif /* MONGO_DB_INDEX_INSERTION_CONTINUATION_H */

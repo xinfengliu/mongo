@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_QUEUE_H
+#define MONGO_UTIL_QUEUE_H
 
 #include "mongo/pch.h"
 
@@ -181,3 +183,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_UTIL_QUEUE_H */

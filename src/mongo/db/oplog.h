@@ -22,6 +22,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_OPLOG_H
+#define MONGO_DB_OPLOG_H
 
 #include "pdfile.h"
 #include "db.h"
@@ -158,3 +160,5 @@ namespace mongo {
      */
     bool applyOperation_inlock(const BSONObj& op, bool fromRepl = true, bool convertUpdateToUpsert = false);
 }
+
+#endif /* MONGO_DB_OPLOG_H */

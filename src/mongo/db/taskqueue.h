@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_TASKQUEUE_H
+#define MONGO_DB_TASKQUEUE_H
 
 // if you turn this back on be sure to enable TaskQueueTest again
 #if 0
@@ -107,3 +109,5 @@ namespace mongo {
 }
 
 #endif
+
+#endif /* MONGO_DB_TASKQUEUE_H */

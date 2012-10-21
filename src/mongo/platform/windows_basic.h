@@ -1,6 +1,8 @@
 // windows_basic.h
 
 #pragma once
+#ifndef MONGO_PLATFORM_WINDOWS_BASIC_H
+#define MONGO_PLATFORM_WINDOWS_BASIC_H
 
 #if defined(_WIN32)
 // for rand_s() usage:
@@ -16,3 +18,5 @@
 # include <wspiapi.h>
 # include <windows.h>
 #endif
+
+#endif /* MONGO_PLATFORM_WINDOWS_BASIC_H */

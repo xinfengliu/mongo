@@ -17,6 +17,8 @@
 
 
 #pragma once
+#ifndef MONGO_S_CURSORS_H
+#define MONGO_S_CURSORS_H
 
 #include "mongo/pch.h"
 
@@ -126,3 +128,5 @@ namespace mongo {
 
     extern CursorCache cursorCache;
 }
+
+#endif /* MONGO_S_CURSORS_H */

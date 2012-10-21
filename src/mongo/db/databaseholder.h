@@ -1,6 +1,8 @@
 // @file databaseholder.h
 
 #pragma once
+#ifndef MONGO_DB_DATABASEHOLDER_H
+#define MONGO_DB_DATABASEHOLDER_H
 
 #include "mongo/db/database.h"
 #include "mongo/db/namespacestring.h"
@@ -110,3 +112,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_DB_DATABASEHOLDER_H */

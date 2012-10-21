@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_UTIL_PATHS_H
+#define MONGO_UTIL_PATHS_H
 
 #include "mongoutils/str.h"
 #include <sys/types.h>
@@ -126,3 +128,5 @@ namespace mongo {
     boost::filesystem::path ensureParentDirCreated(const boost::filesystem::path& p);
 
 }
+
+#endif /* MONGO_UTIL_PATHS_H */

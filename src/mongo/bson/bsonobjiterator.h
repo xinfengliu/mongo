@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_BSONOBJITERATOR_H
+#define MONGO_BSON_BSONOBJITERATOR_H
 
 #include <boost/preprocessor/cat.hpp> // like the ## operator but works with __LINE__
 
@@ -180,3 +182,5 @@ namespace mongo {
             /*nothing*/ )
 
 }
+
+#endif /* MONGO_BSON_BSONOBJITERATOR_H */

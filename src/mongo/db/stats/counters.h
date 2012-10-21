@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_STATS_COUNTERS_H
+#define MONGO_DB_STATS_COUNTERS_H
 
 #include "mongo/pch.h"
 #include "../jsobj.h"
@@ -152,3 +154,5 @@ namespace mongo {
 
     extern NetworkCounter networkCounter;
 }
+
+#endif /* MONGO_DB_STATS_COUNTERS_H */

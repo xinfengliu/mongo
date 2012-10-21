@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_BSON_UTIL_BUILDER_H
+#define MONGO_BSON_UTIL_BUILDER_H
 
 #include <cfloat>
 #include <iostream>
@@ -347,3 +349,5 @@ namespace mongo {
     typedef StringBuilderImpl<StackAllocator> StackStringBuilder;
 
 } // namespace mongo
+
+#endif /* MONGO_BSON_UTIL_BUILDER_H */

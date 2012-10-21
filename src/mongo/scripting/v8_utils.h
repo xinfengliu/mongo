@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_SCRIPTING_V__UTILS_H
+#define MONGO_SCRIPTING_V__UTILS_H
 
 #include <v8.h>
 
@@ -41,3 +43,5 @@ namespace mongo {
     void installFork( V8Scope* scope, v8::Handle< v8::Object > &global, v8::Handle< v8::Context > &context );
 }
 
+
+#endif /* MONGO_SCRIPTING_V__UTILS_H */

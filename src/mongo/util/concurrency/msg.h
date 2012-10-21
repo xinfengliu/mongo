@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_UTIL_CONCURRENCY_MSG_H
+#define MONGO_UTIL_CONCURRENCY_MSG_H
 
 #include <deque>
 
@@ -61,3 +63,5 @@ namespace mongo {
     }
 
 }
+
+#endif /* MONGO_UTIL_CONCURRENCY_MSG_H */

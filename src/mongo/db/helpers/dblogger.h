@@ -17,6 +17,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_HELPERS_DBLOGGER_H
+#define MONGO_DB_HELPERS_DBLOGGER_H
 
 namespace mongo {
 
@@ -29,3 +31,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_DB_HELPERS_DBLOGGER_H */

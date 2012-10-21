@@ -17,6 +17,8 @@
 // Tool.h
 
 #pragma once
+#ifndef MONGO_TOOLS_TOOL_H
+#define MONGO_TOOLS_TOOL_H
 
 #include <string>
 
@@ -158,3 +160,5 @@ namespace mongo {
     };
 
 }
+
+#endif /* MONGO_TOOLS_TOOL_H */

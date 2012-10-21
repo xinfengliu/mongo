@@ -16,6 +16,8 @@
  */
 
 #pragma once
+#ifndef MONGO_DB_PROJECTION_H
+#define MONGO_DB_PROJECTION_H
 
 #include "mongo/pch.h"
 #include "jsobj.h"
@@ -159,3 +161,5 @@ namespace mongo {
 
 
 }
+
+#endif /* MONGO_DB_PROJECTION_H */

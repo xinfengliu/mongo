@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_EXTSORT_H
+#define MONGO_DB_EXTSORT_H
 
 #include "mongo/pch.h"
 
@@ -142,3 +144,5 @@ namespace mongo {
         static unsigned long long _uniqueNumber;
     };
 }
+
+#endif /* MONGO_DB_EXTSORT_H */

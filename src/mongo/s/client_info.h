@@ -16,6 +16,8 @@
  *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+#ifndef MONGO_S_CLIENT_INFO_H
+#define MONGO_S_CLIENT_INFO_H
 
 #include "mongo/pch.h"
 
@@ -140,3 +142,5 @@ namespace mongo {
 
 
 }
+
+#endif /* MONGO_S_CLIENT_INFO_H */

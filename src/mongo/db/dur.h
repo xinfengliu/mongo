@@ -1,6 +1,8 @@
 // @file dur.h durability support
 
 #pragma once
+#ifndef MONGO_DB_DUR_H
+#define MONGO_DB_DUR_H
 
 #include "diskloc.h"
 #include "mongommf.h"
@@ -198,3 +200,5 @@ namespace mongo {
     inline DiskLoc& DiskLoc::writing() const { return getDur().writingDiskLoc(*const_cast< DiskLoc * >( this )); }
 
 }
+
+#endif /* MONGO_DB_DUR_H */

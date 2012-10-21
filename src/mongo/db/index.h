@@ -17,6 +17,8 @@
 */
 
 #pragma once
+#ifndef MONGO_DB_INDEX_H
+#define MONGO_DB_INDEX_H
 
 #include "mongo/pch.h"
 
@@ -268,3 +270,5 @@ namespace mongo {
 
 
 } // namespace mongo
+
+#endif /* MONGO_DB_INDEX_H */
