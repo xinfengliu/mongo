@@ -1,9 +1,14 @@
 # -*- mode: python -*-
 
-Import("env windows solaris")
+Import("env windows solaris bigendian")
 
 if not windows and not solaris:
     env = env.Clone()
     env.Append(CCFLAGS=['-Wno-sign-compare', '-Wno-unused-function'])
+
+if solaris and bigendian:
+    env = env.Clone()
+    env.Append(CPPDEFINES=[ 'WORDS_BIGENDIAN' ])
+
 
 env.StaticLibrary('snappy', ['snappy.cc', 'snappy-sinksource.cc'])

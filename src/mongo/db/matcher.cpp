@@ -1217,6 +1217,7 @@ namespace mongo {
     /*- just for testing -- */
 #pragma pack(1)
     struct JSObj1 {
+#ifndef __SUNPRO_CC
         JSObj1() {
             totsize=sizeof(JSObj1);
             n = NumberDouble;
@@ -1228,6 +1229,7 @@ namespace mongo {
             strcpy_s(sval, 10, "123456789");
             eoo = EOO;
         }
+#endif
         unsigned totsize;
 
         char n;
@@ -1240,13 +1242,12 @@ namespace mongo {
         char sval[10];
 
         char eoo;
-    };
+    } js1;
 #pragma pack()
-
-    struct JSObj1 js1;
 
 #pragma pack(1)
     struct JSObj2 {
+#ifndef __SUNPRO_CC
         JSObj2() {
             totsize=sizeof(JSObj2);
             s = String;
@@ -1255,6 +1256,7 @@ namespace mongo {
             strcpy_s(sval, 10, "123456789");
             eoo = EOO;
         }
+#endif
         unsigned totsize;
         char s;
         char sname[7];
@@ -1276,6 +1278,24 @@ namespace mongo {
                 }
             }
 
+#ifdef __SUNPRO_CC
+         js1.totsize=sizeof(JSObj1);
+         js1.n = NumberDouble;
+         strcpy_s(js1.nname, 5, "abcd");
+         js1.N = 3.1;
+         js1.s = String;
+         strcpy_s(js1.sname, 7, "abcdef");
+         js1.slen = 10;
+         strcpy_s(js1.sval, 10, "123456789");
+         js1.eoo = EOO;
+
+            js2.totsize=sizeof(JSObj2);
+            js2.s = String;
+            strcpy_s(js2.sname, 7, "abcdef");
+            js2.slen = 10;
+            strcpy_s(js2.sval, 10, "123456789");
+            js2.eoo = EOO;
+#endif
             BSONObj j1((const char *) &js1);
             BSONObj j2((const char *) &js2);
             Matcher m(j2);

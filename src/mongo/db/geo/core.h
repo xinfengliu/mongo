@@ -29,6 +29,10 @@
 #  define M_PI 3.14159265358979323846
 #endif
 
+#ifdef __sparc
+#include <sys/byteorder.h>
+#endif
+
 namespace mongo {
 
     class GeoBitSets {
@@ -128,6 +132,9 @@ namespace mongo {
             verify( bits <= 32 );
             _hash = 0;
             _bits = bits;
+//#ifdef __sparc
+//	    BSWAP_32(x); BSWAP_32(y);
+//#endif
             for ( unsigned i=0; i<bits; i++ ) {
                 if ( isBitSet( x , i ) ) _hash |= geoBitSets.masks64[i*2];
                 if ( isBitSet( y , i ) ) _hash |= geoBitSets.masks64[(i*2)+1];
@@ -139,10 +146,11 @@ namespace mongo {
             y = 0;
             char * c = (char*)(&_hash);
             for ( int i=0; i<8; i++ ) {
-                unsigned t = (unsigned)(c[i]) & 0x55;
+                unsigned char c_i = _hash >> ( i * 8 );
+                unsigned t = c_i & 0x55;
                 y |= ( geoBitSets.hashedToNormal[t] << (4*(i)) );
-
-                t = ( (unsigned)(c[i]) >> 1 ) & 0x55;
+                
+                t = ( c_i >> 1 ) & 0x55;
                 x |= ( geoBitSets.hashedToNormal[t] << (4*(i)) );
             }
         }
@@ -160,6 +168,7 @@ namespace mongo {
 
         void unhash( unsigned& x , unsigned& y ) const {
             unhash_fast( x , y );
+            //unhash_slow( x, y );
         }
 
         /**
@@ -381,9 +390,14 @@ namespace mongo {
     private:
 
         static void _copy( char * dst , const char * src ) {
+#ifdef __sparc
+	    //memmove( dst, src, 8);
+	    memcpy( dst, src, 8);  //assume src and dst is not overlapped
+#else
             for ( unsigned a=0; a<8; a++ ) {
                 dst[a] = src[7-a];
             }
+#endif
         }
 
         long long _hash;

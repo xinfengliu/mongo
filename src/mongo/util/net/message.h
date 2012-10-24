@@ -273,7 +273,11 @@ namespace mongo {
             size_t dataLen = len + sizeof(MsgData) - 4;
             MsgData *d = (MsgData *) malloc(dataLen);
             memcpy(d->_data, msgdata, len);
+#ifdef __sparc
+            d->len = dataLen;
+#else
             d->len = fixEndian(dataLen);
+#endif
             d->setOperation(operation);
             _setData( d, true );
         }

@@ -34,7 +34,11 @@ namespace mongo {
     // to avoid deadlocks at shutdown.  So it also protects
     // the global dbexitCalled.
     namespace shell_utils {
+#ifndef __SUNPRO_CC
         mongo::mutex &mongoProgramOutputMutex(*(new mongo::mutex("mongoProgramOutputMutex")));
+#else
+        mongo::mutex &mongoProgramOutputMutex = *(new mongo::mutex("mongoProgramOutputMutex"));
+#endif
     }
 
     void dbexit( ExitCode returnCode, const char *whyMsg ) {

@@ -111,10 +111,13 @@ namespace mongo {
             _buf = buf;
             //nodes = (Node *) buf;
 
+#ifndef __SUNPRO_CC    
+		//SunCC has problem in packing data, 632 in SunCC
             if ( sizeof(Node) != 628 ) {
                 out() << "HashTable() " << _name << " sizeof(node):" << sizeof(Node) << " n:" << n << " sizeof(Key): " << sizeof(Key) << " sizeof(Type):" << sizeof(Type) << endl;
                 verify( sizeof(Node) == 628 );
             }
+#endif
 
         }
 

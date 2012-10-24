@@ -534,6 +534,8 @@ elif "sunos5" == os.sys.platform:
      if os.uname()[4] == "sun4u" or  os.uname()[4] == "sun4v": 
          #env.Append( CCFLAGS=[ "-xmemalign=8i" ]) #still bus error on sparc
          env.Append( CCFLAGS=[ "-xmemalign=1s" ])  #fine
+	 bigendian = True
+	 Export( "bigendian" )
 
      #for anonymous struct in union
      env.Append( CCFLAGS=[ "-features=extensions" ]) 
@@ -731,16 +733,15 @@ if nix:
     if debugBuild:
         #env.Append( CCFLAGS=["-O0", "-fstack-protector"] )
         #env['ENV']['GLIBCXX_FORCE_NEW'] = 1; # play nice with valgrind
-        env.Append( CCFLAGS=["-O0"] )
-        env.Append( CCFLAGS=["-g"] )
-        env.Append( LINKFLAGS=["-O0"] ) #for build exec with CC instead of ld
+        #must use with -O0 with -g, otherwise compile fail- SunCC bug?
+        env.Append( CCFLAGS=["-O0"] ) 
+        #env.Append( CCFLAGS=["-g3"] ) # too big file size
+        env.Append( CCFLAGS=["-g"] ) 
+        env.Append( LINKFLAGS=["-O0"] ) #LINKFLAGS is for build exec with CC instead of ld
         env.Append( LINKFLAGS=["-g"] )
     else:
-        #env.Append( CCFLAGS=["-xO3"] )
-        env.Append( CCFLAGS=["-xO2"] )
-        env.Append( CCFLAGS=["-g0"] )
-        env.Append( LINKFLAGS=["-xO2"] )
-        env.Append( LINKFLAGS=["-g0"] )
+        env.Append( CCFLAGS=["-xO3"] )
+        env.Append( LINKFLAGS=["-xO3"] )
 
     if debugLogging:
         env.Append( CPPDEFINES=["_DEBUG"] );

@@ -35,8 +35,13 @@ namespace mongo {
     struct ShardChunkVersion {
         union {
             struct {
+#ifdef __sparc
+                int _major;
+                int _minor;
+#else
                 int _minor;
                 int _major;
+#endif
             };
             unsigned long long _combined;
         };

@@ -188,12 +188,21 @@ namespace mongo {
 
     // a a a ofs ofs ofs ofs
     class DiskLoc56Bit {
+#ifdef __sparc
+	unsigned char padding;
+	unsigned char _a[3];
+	int ofs;
+        unsigned long long Z() const { 
+            return *((unsigned long long*)this) & 0x00ffffffffffffffULL;
+	}
+#else
         int ofs;
         unsigned char _a[3];
         unsigned long long Z() const { 
             // endian
             return *((unsigned long long*)this) & 0x00ffffffffffffffULL;
         }
+#endif
         enum { 
             // first bit of offsets used in _KeyNode we don't use -1 here.
             OurNullOfs = -2
@@ -210,7 +219,11 @@ namespace mongo {
         operator const DiskLoc() const { 
             // endian
             if( isNull() ) return DiskLoc();
+#ifdef __sparc
+            unsigned a = *((unsigned *) (_a));
+#else
             unsigned a = *((unsigned *) (_a-1));
+#endif
             return DiskLoc(a >> 8, ofs);
         }
         int& GETOFS()      { return ofs; }
@@ -251,7 +264,11 @@ namespace mongo {
                 la = 0;
                 ofs = OurNullOfs;
             }
+#ifdef __sparc
+	    memcpy(_a, ((char *)&la) + 1, 3);
+#else
             memcpy(_a, &la, 3); // endian
+#endif
             dassert( ofs != 0 );
         }
         DiskLoc56Bit& writing() const { 

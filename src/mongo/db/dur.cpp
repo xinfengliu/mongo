@@ -399,7 +399,11 @@ namespace mongo {
                             lastMismatch= i;
                             if( ++logged < 60 ) {
                                 if( logged == 1 )
+#ifdef __SUNPRO_CC
+                                    log() << "ofs % 632 = 0x" << hex << (i%632) << endl; // for .ns files to find offset in record
+#else
                                     log() << "ofs % 628 = 0x" << hex << (i%628) << endl; // for .ns files to find offset in record
+#endif
                                 stringstream ss;
                                 ss << "mismatch ofs:" << hex << i <<  "\tfilemap:" << setw(2) << (unsigned) w[i] << "\tprivmap:" << setw(2) << (unsigned) p[i];
                                 if( p[i] > 32 && p[i] <= 126 )
