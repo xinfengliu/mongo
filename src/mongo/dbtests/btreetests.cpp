@@ -25,7 +25,9 @@
 
 #include "dbtests.h"
 
-#define BtreeBucket BtreeBucket<V0>
+/* doesn't compile on SunCC because of nested macro expansion */ 
+#ifndef __SUNPRO_CC
+#define BtreeBucket  BtreeBucket<V0> 
 #define btree btree<V0>
 #define btreemod btreemod<V0>
 #define Continuation IndexInsertionContinuationImpl<V0>
@@ -58,3 +60,39 @@ namespace BtreeTests1 {
 namespace BtreeTests2 {
  #include "btreetests.inl"
 }
+
+#else    //__SUNPRO_CC
+#define _BtreeBucket  BtreeBucket<V0> 
+#define _btree btree<V0>
+#define _btreemod btreemod<V0>
+#define _Continuation IndexInsertionContinuationImpl<V0>
+#define testName "btree"
+#define BTVERSION 0
+namespace BtreeTests0 {
+ #include "btreetests.inl.suncc"
+}
+
+#undef _BtreeBucket
+#undef _btree
+#undef _btreemod
+#undef _Continuation
+#define _BtreeBucket BtreeBucket<V1>
+#define _btree btree<V1>
+#define _btreemod btreemod<V1>
+#define _Continuation IndexInsertionContinuationImpl<V1>
+#undef testName
+#define testName "btree1"
+#undef BTVERSION
+#define BTVERSION 1
+namespace BtreeTests1 {
+ #include "btreetests.inl.suncc"
+}
+
+#undef testName
+#define testName "btree1_twostep"
+#define TESTTWOSTEP 1
+
+namespace BtreeTests2 {
+ #include "btreetests.inl.suncc"
+}
+#endif //__SUNPRO_CC

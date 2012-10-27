@@ -930,12 +930,23 @@ namespace PerfTests {
                 mongo::Checksum c;
                 c.gen(p, sz-1);
                 ASSERT( c != last );
+
+#ifdef __sparc
+                ((char *&)p)[7]++; // check same data, different order, doesn't give same checksum
+                ((char *&)p)[6]--;
+                c.gen(p, sz);
+                ASSERT( c != last );
+                ((char *&)p)[6]++; // check same data, different order, doesn't give same checksum (different longwords case)
+                ((char *&)p)[15]--;
+#else
                 ((char *&)p)[0]++; // check same data, different order, doesn't give same checksum
                 ((char *&)p)[1]--;
                 c.gen(p, sz);
                 ASSERT( c != last );
                 ((char *&)p)[1]++; // check same data, different order, doesn't give same checksum (different longwords case)
                 ((char *&)p)[8]--;
+#endif
+
                 c.gen(p, sz);
                 ASSERT( c != last );
             }

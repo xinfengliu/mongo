@@ -28,10 +28,12 @@
 
 namespace mongo {
 
-    template <typename T, typename IsTLarge=void>
+    //template <typename T, typename IsTLarge=void>
+    template <typename T>
     class AtomicIntrinsics {
     public:
 
+	//for 64-bit here, if other size data, then template specialization 
         static T compareAndSwap(volatile T* dest, T expected, T newValue) {
             return *(T*)atomic_cas_ptr(dest, &expected, &newValue);
         }
@@ -52,6 +54,7 @@ namespace mongo {
 	    //__machine_rel_barrier();
         }
 
+        //static T fetchAndAdd(volatile T* dest, T increment); 
         static T fetchAndAdd(volatile T* dest, T increment) {
 	    T old = *dest;
 	    atomic_add_ptr(dest, (ssize_t) increment);
@@ -62,6 +65,44 @@ namespace mongo {
         AtomicIntrinsics();
         ~AtomicIntrinsics();
     };
+
+    template <>  inline unsigned
+    AtomicIntrinsics<unsigned>::fetchAndAdd(volatile unsigned* dest, 
+					unsigned increment) {
+     	unsigned old = *dest;
+	atomic_add_32(dest, (int)increment); 
+	return old;
+    }
+
+    template <> inline  int
+    AtomicIntrinsics<int>::fetchAndAdd(volatile int* dest, 
+					int increment) {
+     	int old = *dest;
+	atomic_add_32((volatile unsigned*)dest, increment);
+	return old;
+    }
+
+    template <> inline unsigned
+    AtomicIntrinsics<unsigned>::swap(volatile unsigned* dest, unsigned newValue) {
+	    return atomic_swap_32(dest, newValue);
+    }
+
+    template <> inline int
+    AtomicIntrinsics<int>::swap(volatile int* dest, int newValue) {
+	    return atomic_swap_32((volatile unsigned*)dest, newValue);
+    }
+
+    template <> inline unsigned
+    AtomicIntrinsics<unsigned>::compareAndSwap(volatile unsigned* dest, 
+			unsigned expected, unsigned newValue) {
+            return atomic_cas_32(dest, expected, newValue);
+    }
+
+    template <> inline int
+    AtomicIntrinsics<int>::compareAndSwap(volatile int* dest, 
+			int expected, int newValue) {
+            return atomic_cas_32((volatile unsigned*)dest, expected, newValue);
+    }
 
 }  // namespace mongo
 

@@ -400,11 +400,19 @@ namespace mongo {
         }
 
         Date_t timestampTime() const {
+#ifdef __sparc
+            unsigned long long t = ((unsigned int*)(value() ))[0];
+#else
             unsigned long long t = ((unsigned int*)(value() + 4 ))[0];
+#endif
             return t * 1000;
         }
         unsigned int timestampInc() const {
+#ifdef __sparc
+            return ((unsigned int*)(value() + 4 ))[0];
+#else
             return ((unsigned int*)(value() ))[0];
+#endif
         }
 
         const char * dbrefNS() const {

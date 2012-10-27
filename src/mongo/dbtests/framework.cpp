@@ -21,8 +21,10 @@
 #include "mongo/dbtests/framework.h"
 
 #ifndef _WIN32
-#include <cxxabi.h>
-#include <sys/file.h>
+  #if !defined(__SUNPRO_CC)
+  #include <cxxabi.h>
+  #include <sys/file.h>
+  #endif
 #endif
 
 #include <boost/filesystem/operations.hpp>

@@ -535,7 +535,7 @@ namespace DocumentSourceTests {
 
         struct ValueCmp {
             bool operator()( const intrusive_ptr<const Value> &a,
-                            const intrusive_ptr<const Value> &b ) {
+                            const intrusive_ptr<const Value> &b ) const{
                 return Value::compare( a, b ) < 0;
             }
         };

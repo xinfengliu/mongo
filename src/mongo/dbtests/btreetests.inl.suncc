@@ -1,4 +1,4 @@
-    typedef BtreeBucket::_KeyNode _KeyNode;
+    typedef _BtreeBucket::_KeyNode _KeyNode;
  
     const char* ns() {
         return "unittests.btreetests";
@@ -45,8 +45,8 @@
             return val;
         }
     protected:
-        const BtreeBucket* bt() {
-            return id().head.btree();
+        const _BtreeBucket* bt() {
+            return id().head._btree();
         }
         DiskLoc dl() {
             return id().head;
@@ -66,11 +66,11 @@
             bt()->dumpTree( dl(), order() );
         }
         void insert( BSONObj &key ) {
-            const BtreeBucket *b = bt();
+            const _BtreeBucket *b = bt();
 
 #if defined(TESTTWOSTEP)
             {
-                Continuation c(dl(), recordLoc(), key, Ordering::make(order()), id());
+                _Continuation c(dl(), recordLoc(), key, Ordering::make(order()), id());
                 b->twoStepInsert(dl(), c, true);
                 c.doIndexInsertionWrites();
             }
@@ -111,7 +111,7 @@
         BSONObj order() {
             return id().keyPattern();
         }
-        const BtreeBucket *child( const BtreeBucket *b, int i ) {
+        const _BtreeBucket *child( const _BtreeBucket *b, int i ) {
             verify( i <= b->nKeys() );
             DiskLoc d;
             if ( i == b->nKeys() ) {
@@ -121,7 +121,7 @@
                 d = b->keyNode( i ).prevChildBucket;
             }
             verify( !d.isNull() );
-            return d.btree();
+            return d._btree();
         }
         void checkKey( char i ) {
             stringstream ss;
@@ -402,10 +402,10 @@
                 c->advance();
             }
             // too much work to try to make this happen through inserts and deletes
-            // we are intentionally manipulating the btree bucket directly here
-            BtreeBucket::Loc* L = const_cast< BtreeBucket::Loc* >( &bt()->keyNode( 1 ).prevChildBucket );
+            // we are intentionally manipulating the _btree bucket directly here
+            _BtreeBucket::Loc* L = const_cast< _BtreeBucket::Loc* >( &bt()->keyNode( 1 ).prevChildBucket );
             getDur().writing(L)->Null();
-            getDur().writingInt( const_cast< BtreeBucket::Loc& >( bt()->keyNode( 1 ).recordLoc ).GETOFS() ) |= 1; // make unused
+            getDur().writingInt( const_cast< _BtreeBucket::Loc& >( bt()->keyNode( 1 ).recordLoc ).GETOFS() ) |= 1; // make unused
             BSONObj k = BSON( "a" << toInsert );
             Base::insert( k );
         }
@@ -493,7 +493,7 @@
     };
 
     // Tool to construct custom trees for tests.
-    class ArtificialTree : public BtreeBucket {
+    class ArtificialTree : public _BtreeBucket {
     public:
         void push( const BSONObj &key, const DiskLoc &child ) {
             KeyOwned k(key);
@@ -509,7 +509,7 @@
             return ret;
         }
         static ArtificialTree *is( const DiskLoc &l ) {
-            return static_cast< ArtificialTree * >( l.btreemod() );
+            return static_cast< ArtificialTree * >( l._btreemod() );
         }
         static DiskLoc makeTree( const string &spec, IndexDetails &id ) {
             return makeTree( fromjson( spec ), id );
@@ -591,12 +591,12 @@
         static bool present( const IndexDetails &id, const BSONObj &key, int direction ) {
             int pos;
             bool found;
-            id.head.btree()->locate( id, id.head, key, Ordering::make(id.keyPattern()), pos, found, recordLoc(), direction );
+            id.head._btree()->locate( id, id.head, key, Ordering::make(id.keyPattern()), pos, found, recordLoc(), direction );
             return found;
         }
-        int headerSize() const { return BtreeBucket::headerSize(); }
-        int packedDataSize( int pos ) const { return BtreeBucket::packedDataSize( pos ); }
-        void fixParentPtrs( const DiskLoc &thisLoc ) { BtreeBucket::fixParentPtrs( thisLoc ); }
+        int headerSize() const { return _BtreeBucket::headerSize(); }
+        int packedDataSize( int pos ) const { return _BtreeBucket::packedDataSize( pos ); }
+        void fixParentPtrs( const DiskLoc &thisLoc ) { _BtreeBucket::fixParentPtrs( thisLoc ); }
         void forcePack() {
             topSize += emptySize;
             emptySize = 0;
@@ -929,7 +929,7 @@
                 verify( nextSize > 0 );
                 BSONObj newKey = key( startKey++, nextSize );
                 t->push( newKey, DiskLoc() );
-                size += BtreeBucket::KeyOwned(newKey).dataSize() + sizeof( _KeyNode );
+                size += _BtreeBucket::KeyOwned(newKey).dataSize() + sizeof( _KeyNode );
                 _count += 1;
             }
             if( t->packedDataSize( 0 ) != targetSize ) {
@@ -946,28 +946,28 @@
             return simpleKey( a, 801 );
         }
         static BSONObj biggestKey( char a ) {
-            int size = BtreeBucket::getKeyMax() - bigSize() + 801;
+            int size = _BtreeBucket::getKeyMax() - bigSize() + 801;
             return simpleKey( a, size );
         }
         static int bigSize() {
-            return BtreeBucket::KeyOwned(bigKey( 'a' )).dataSize();
+            return _BtreeBucket::KeyOwned(bigKey( 'a' )).dataSize();
         }
         static int biggestSize() {
-            return BtreeBucket::KeyOwned(biggestKey( 'a' )).dataSize();
+            return _BtreeBucket::KeyOwned(biggestKey( 'a' )).dataSize();
         }
         int _count;
     };
 
     class MergeSizeJustRightRight : public MergeSizeBase {
     protected:
-        virtual int rightSize() const { return BtreeBucket::lowWaterMark() - 1; }
-        virtual int leftSize() const { return BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ) - ( BtreeBucket::lowWaterMark() - 1 ); }
+        virtual int rightSize() const { return _BtreeBucket::lowWaterMark() - 1; }
+        virtual int leftSize() const { return _BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ) - ( _BtreeBucket::lowWaterMark() - 1 ); }
     };
 
     class MergeSizeJustRightLeft : public MergeSizeBase {
     protected:
-        virtual int leftSize() const { return BtreeBucket::lowWaterMark() - 1; }
-        virtual int rightSize() const { return BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ) - ( BtreeBucket::lowWaterMark() - 1 ); }
+        virtual int leftSize() const { return _BtreeBucket::lowWaterMark() - 1; }
+        virtual int rightSize() const { return _BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ) - ( _BtreeBucket::lowWaterMark() - 1 ); }
         virtual const char * delKeys() const { return "yzkl"; }
     };
 
@@ -1111,7 +1111,7 @@
                 ASSERT_EQUALS( 0, t->n );
                 ASSERT_EQUALS( 0, t->topSize );
 #ifndef __SUNPRO_CC
-                ASSERT_EQUALS( BtreeBucket::bodySize(), t->emptySize );
+                ASSERT_EQUALS( _BtreeBucket::bodySize(), t->emptySize );
 #endif
                 ASSERT( t->flags & Packed );
             }
@@ -1191,7 +1191,7 @@
         struct Tester : public ArtificialTree {
             static void checkSeparator( const IndexDetails& id, int expected ) {
 #ifndef __SUNPRO_CC
-                ASSERT_EQUALS( expected, static_cast< Tester * >( id.head.btreemod() )->rebalancedSeparatorPos( id.head, 0 ) );
+                ASSERT_EQUALS( expected, static_cast< Tester * >( id.head._btreemod() )->rebalancedSeparatorPos( id.head, 0 ) );
 #endif
             }
         };
@@ -1344,7 +1344,7 @@
         virtual int leftAdditional() const { return 1; }
         virtual const char * delKeys() const { return "lz"; }
         virtual int rightSize() const { return 0; }
-        virtual int leftSize() const { return BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ); }
+        virtual int leftSize() const { return _BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ); }
     };
 
     class MergeMinRightEmpty : public MergeSizeBase {
@@ -1362,7 +1362,7 @@
         virtual int leftAdditional() const { return 1; }
         virtual const char * delKeys() const { return "zl"; }
         virtual int leftSize() const { return 0; }
-        virtual int rightSize() const { return BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ); }
+        virtual int rightSize() const { return _BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ); }
     };
 
     class MergeMinLeftEmpty : public MergeSizeBase {
@@ -1376,7 +1376,7 @@
 
     class BalanceRightEmpty : public MergeRightEmpty {
     protected:
-        virtual int leftSize() const { return BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ) + 1; }
+        virtual int leftSize() const { return _BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ) + 1; }
         virtual bool merge() const { return false; }
         virtual void initCheck() { _oldTop = bt()->keyNode( 0 ).key.toBson(); }
         virtual void validate() { ASSERT( !( _oldTop == bt()->keyNode( 0 ).key.toBson() ) ); }
@@ -1386,7 +1386,7 @@
 
     class BalanceLeftEmpty : public MergeLeftEmpty {
     protected:
-        virtual int rightSize() const { return BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ) + 1; }
+        virtual int rightSize() const { return _BtreeBucket::bodySize() - biggestSize() - sizeof( _KeyNode ) + 1; }
         virtual bool merge() const { return false; }
         virtual void initCheck() { _oldTop = bt()->keyNode( 0 ).key.toBson(); }
         virtual void validate() { ASSERT( !( _oldTop == bt()->keyNode( 0 ).key.toBson() ) ); }
@@ -1453,7 +1453,7 @@
         void run() {
             string ns = id().indexNamespace();
             ArtificialTree::setTree( "{a:null,c:{b:null},d:null}", id() );
-            getDur().writingInt( const_cast< BtreeBucket::Loc& >( bt()->keyNode( 1 ).prevChildBucket.btree()->keyNode( 0 ).recordLoc ).GETOFS() ) |= 1; // make unused
+            getDur().writingInt( const_cast< _BtreeBucket::Loc& >( bt()->keyNode( 1 ).prevChildBucket._btree()->keyNode( 0 ).recordLoc ).GETOFS() ) |= 1; // make unused
             long long unused = 0;
             ASSERT_EQUALS( 3, bt()->fullValidate( dl(), order(), &unused, true ) );
             ASSERT_EQUALS( 1, unused );

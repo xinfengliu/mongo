@@ -78,7 +78,7 @@ namespace DocumentTests {
         public:
             void run() {
                 intrusive_ptr<Document> document = Document::create();
-                document->addField( "foo", Value::createInt( 1 ) );
+                document->addField( "foo", mongo::Value::createInt( 1 ) );
                 ASSERT_EQUALS( 1U, document->getFieldCount() );
                 ASSERT_EQUALS( 1, document->getValue( "foo" )->getInt() );
                 document->addField( "bar", Value::createInt( 99 ) );

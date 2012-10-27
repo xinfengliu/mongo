@@ -3070,10 +3070,12 @@ namespace mongo {
                 BSONObj in = BSON( "x" << x << "y" << y );
                 GeoHash h = g._hash( in );
                 BSONObj out = g._unhash( h );
+/*
 std::cout << "in[x]" << in["x"].number() << std::endl;
 std::cout << "in[y]" << in["y"].number() << std::endl;
 std::cout << "out[x]" << out["x"].number() << std::endl;
 std::cout << "out[y]" << out["y"].number() << std::endl;
+*/
                 verify( round(x) == round( out["x"].number() ) );
                 verify( round(y) == round( out["y"].number() ) );
                 verify( round( in["x"].number() ) == round( out["x"].number() ) );

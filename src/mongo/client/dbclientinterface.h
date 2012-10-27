@@ -164,7 +164,7 @@ namespace mongo {
         /**
          * Read from any member.
          */
-        ReadPreference_Nearest,
+        ReadPreference_Nearest
     };
 
     class DBClientBase;

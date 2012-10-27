@@ -120,6 +120,9 @@ namespace mongo {
         char line[MAX_LINE_LENGTH];
 
         while ( f ) {
+#ifdef __SUNPRO_CC
+	    line[0] = '\0';
+#endif
             f.getline(line, MAX_LINE_LENGTH);
             s = line;
             std::remove(s.begin(), s.end(), ' ');
