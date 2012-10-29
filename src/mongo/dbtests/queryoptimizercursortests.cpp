@@ -257,7 +257,7 @@ namespace QueryOptimizerCursorTests {
         long long nscanned() const { return _c->nscanned(); }
         unsigned nNsCursors() const {
             set<CursorId> nsCursors;
-            ClientCursor::find( ns(), nsCursors );
+            mongo::ClientCursor::find( ns(), nsCursors );
             return nsCursors.size();
         }
         BSONObj cachedIndexForQuery( const BSONObj &query, const BSONObj &order = BSONObj() ) {

@@ -22,6 +22,10 @@
 #ifndef MONGO_PLATFORM_ATOMIC_INTRINSICS_SUNCC_H
 #define MONGO_PLATFORM_ATOMIC_INTRINSICS_SUNCC_H
 
+#if !defined(_LP64) && !defined(__LP64__)
+#error "atomic_intrinsics_suncc.h currently only supports 64-bit build"
+#endif 
+
 //#include <boost/utility.hpp>
 #include <atomic.h>
 #include <mbarrier.h>
@@ -35,11 +39,11 @@ namespace mongo {
 
 	//for 64-bit here, if other size data, then template specialization 
         static T compareAndSwap(volatile T* dest, T expected, T newValue) {
-            return *(T*)atomic_cas_ptr(dest, &expected, &newValue);
+            return (T) atomic_cas_ptr(dest, (void *) expected, (void *) newValue);
         }
 
         static T swap(volatile T* dest, T newValue) {
-	    return *(T*)atomic_swap_ptr(dest, &newValue);
+	    return (T)atomic_swap_ptr(dest, (void *)newValue);
         }
 
         static T load(volatile const T* value) {

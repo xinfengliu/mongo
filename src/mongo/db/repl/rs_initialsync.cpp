@@ -243,7 +243,7 @@ namespace mongo {
         return closest;
     }
 
-    void ReplSetImpl::veto(const string& host, const unsigned secs) {
+    void ReplSetImpl::veto(const string& host, unsigned secs) {
         lock lk(this);
         _veto[host] = time(0)+secs;
     }

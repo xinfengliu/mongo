@@ -28,6 +28,11 @@
  *    limitations under the License.
  */
 
+#ifdef __SUNPRO_CC
+#include <time.h>  //possible stlport4 bug under 64-bit
+#include <stdlib.h>
+#endif 
+
 #include "../bson.h"
 #include <iostream>
 #include <vector>

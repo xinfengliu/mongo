@@ -94,7 +94,7 @@ private:
     MessagingPort &mp_;
 };
 
-set<MessagingPort*>& ports ( *(new std::set<MessagingPort*>()) );
+set<MessagingPort*>& ports = *(new std::set<MessagingPort*>()) ;
 
 class MyListener : public Listener {
 public:

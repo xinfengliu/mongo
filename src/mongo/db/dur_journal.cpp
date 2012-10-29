@@ -55,7 +55,7 @@ namespace mongo {
         // work.  (and should as-is)
         // --smallfiles makes the limit small.
 
-#if defined(_DEBUG)
+#if defined(_DEBUG) || defined(__sunos__)
         unsigned long long DataLimitPerJournalFile = 128 * 1024 * 1024;
 #elif defined(__APPLE__)
         // assuming a developer box if OS X

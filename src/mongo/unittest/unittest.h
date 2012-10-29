@@ -20,6 +20,10 @@
  * For examples of basic usage, see mongo/unittest/unittest_test.cpp.
  */
 
+#ifdef __SUNPRO_CC
+#include <stdlib.h>   //for missing malloc,realloc,etc.
+#endif
+
 #include <sstream>
 #include <string>
 #include <vector>
@@ -32,6 +36,7 @@
 
 #include "mongo/util/assert_util.h"
 #include "mongo/util/mongoutils/str.h"
+
 
 /**
  * Fail unconditionally, reporting the given message.
